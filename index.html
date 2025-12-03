@@ -2,11 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>OrderLine – Your Online Ordering Department</title>
+    <title>Meridian – Online Ordering Setup & Management</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="OrderLine is your done-for-you online ordering department. We set up, manage, and optimize Square Online ordering for independent restaurants."
+      content="Meridian helps independent restaurants launch and manage online ordering using Square – without changing your website, staff, or POS."
     />
     <!-- Tailwind via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -19,251 +19,376 @@
             },
             colors: {
               brand: {
-                50: "#f5f7ff",
-                100: "#e1e6ff",
-                500: "#111827", // dark navy
-                600: "#020617",
+                900: "#020617",
               },
               accent: {
-                500: "#f97316", // orange
-                600: "#ea580c",
+                500: "#f97316",
               },
             },
             boxShadow: {
-              card: "0 18px 45px rgba(15,23,42,0.10)",
+              soft: "0 18px 45px rgba(15,23,42,0.08)",
             },
           },
         },
       };
     </script>
   </head>
-  <body class="bg-slate-50 text-slate-900 font-sans">
-    <div class="min-h-screen flex flex-col">
-      <!-- Nav -->
-      <header class="border-b border-slate-200 bg-white/80 backdrop-blur">
-        <div
-          class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between"
-        >
-          <div class="flex items-center gap-2">
-            <div
-              class="h-9 w-9 rounded-2xl bg-slate-900 flex items-center justify-center text-white font-semibold text-xs shadow-md"
-            >
-              OL
-            </div>
-            <div>
-              <div class="text-sm font-semibold tracking-tight">OrderLine</div>
-              <div class="text-[11px] text-slate-500 -mt-0.5">
-                Online Ordering Department
+  <body class="bg-white font-sans text-slate-900 antialiased">
+    <div class="min-h-screen">
+      <!-- NAV -->
+      <header
+        id="nav"
+        class="fixed top-0 inset-x-0 z-40 transition-all duration-300 bg-transparent"
+      >
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <div class="flex items-center justify-between h-20">
+            <div class="flex items-center gap-2">
+              <div
+                class="w-10 h-10 bg-gradient-to-br from-slate-900 to-slate-700 rounded-xl flex items-center justify-center"
+              >
+                <span class="text-white font-bold text-lg">M</span>
               </div>
+              <span
+                class="text-xl font-semibold tracking-tight text-slate-900"
+                >Meridian</span
+              >
             </div>
-          </div>
-          <nav class="hidden md:flex items-center gap-8 text-sm text-slate-600">
-            <a href="#services" class="hover:text-slate-900">Services</a>
-            <a href="#process" class="hover:text-slate-900">How It Works</a>
-            <a href="#pricing" class="hover:text-slate-900">Pricing</a>
-            <a href="#faq" class="hover:text-slate-900">FAQ</a>
-          </nav>
-          <div class="hidden sm:flex items-center gap-3">
+
+            <nav
+              class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600"
+            >
+              <a href="#services" class="hover:text-slate-900"
+                >Services</a
+              >
+              <a href="#how-it-works" class="hover:text-slate-900"
+                >How It Works</a
+              >
+              <a href="#pricing" class="hover:text-slate-900">Pricing</a>
+              <a href="#faq" class="hover:text-slate-900">FAQ</a>
+            </nav>
+
+            <div class="hidden md:flex items-center gap-4">
+              <button
+                type="button"
+                onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})"
+                class="text-sm text-slate-600 hover:text-slate-900"
+              >
+                View Pricing
+              </button>
+              <a
+                href="#cta"
+                class="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white text-sm rounded-full px-6 py-2.5"
+              >
+                Schedule Demo
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+
+            <!-- mobile button -->
             <button
-              onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})"
-              class="hidden lg:inline-flex text-xs sm:text-sm items-center px-4 py-2 rounded-full border border-slate-200 text-slate-700 hover:bg-slate-100"
+              id="mobile-toggle"
+              class="md:hidden p-2 text-slate-800"
+              aria-label="Toggle menu"
             >
-              View Pricing
+              <span id="mobile-icon-open">☰</span>
+              <span id="mobile-icon-close" class="hidden">✕</span>
             </button>
+          </div>
+        </div>
+
+        <!-- MOBILE MENU -->
+        <div
+          id="mobile-menu"
+          class="md:hidden bg-white border-t border-slate-200 overflow-hidden max-h-0 transition-all duration-300"
+        >
+          <div class="px-6 py-4 space-y-4 text-sm">
             <a
-              href="#contact"
-              class="inline-flex text-xs sm:text-sm items-center gap-1.5 px-5 py-2.5 rounded-full bg-slate-900 hover:bg-slate-800 text-white shadow-md"
+              href="#services"
+              class="block text-slate-700 hover:text-slate-900"
+              >Services</a
             >
-              <span>Schedule Demo</span>
-              <span aria-hidden="true">→</span>
+            <a
+              href="#how-it-works"
+              class="block text-slate-700 hover:text-slate-900"
+              >How It Works</a
+            >
+            <a
+              href="#pricing"
+              class="block text-slate-700 hover:text-slate-900"
+              >Pricing</a
+            >
+            <a href="#faq" class="block text-slate-700 hover:text-slate-900"
+              >FAQ</a
+            >
+            <a
+              href="#cta"
+              class="inline-flex w-full items-center justify-center bg-slate-900 hover:bg-slate-800 text-white rounded-full py-2.5"
+            >
+              Schedule Demo
             </a>
           </div>
         </div>
       </header>
 
-      <main class="flex-1">
+      <main>
         <!-- HERO -->
         <section
-          class="bg-gradient-to-br from-white via-slate-50 to-orange-50/60 border-b border-slate-100"
+          class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden"
         >
           <div
-            class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-20 grid lg:grid-cols-2 gap-10 items-center"
-          >
-            <!-- Left -->
-            <div class="space-y-6">
-              <span
-                class="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.18em] text-emerald-700"
-              >
-                <span
-                  class="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"
-                ></span>
-                Square Online Partner–Style Service
-              </span>
+            class="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-amber-50/30"
+          ></div>
+          <div
+            class="absolute top-20 right-0 w-[600px] h-[600px] bg-gradient-to-br from-amber-100/40 to-orange-100/20 rounded-full blur-3xl"
+          ></div>
+          <div
+            class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-slate-100/60 to-slate-50/30 rounded-full blur-3xl"
+          ></div>
 
-              <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight">
-                Turn your website
-                <span class="text-accent-500">into a revenue engine.</span>
-              </h1>
-
-              <p class="text-sm sm:text-base text-slate-700 max-w-xl">
-                OrderLine helps independent restaurants launch and manage online
-                ordering using Square—without changing your website, staff, or
-                POS. We handle setup, menu builds, integration, and ongoing
-                management so you can focus on food.
-              </p>
-
-              <div class="flex flex-wrap items-center gap-4">
-                <a
-                  href="#contact"
-                  class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-slate-900 hover:bg-slate-800 text-sm font-medium text-white shadow-md"
-                >
-                  Schedule a 20-minute demo
-                  <span aria-hidden="true">→</span>
-                </a>
-                <button
-                  onclick="document.getElementById('pricing').scrollIntoView({ behavior: 'smooth' })"
-                  class="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-white border border-slate-200 text-sm text-slate-700 hover:bg-slate-100"
-                >
-                  View pricing
-                </button>
-              </div>
-
-              <div
-                class="flex flex-wrap items-center gap-4 text-xs text-slate-600 pt-2"
-              >
-                <div class="flex items-center gap-1">
-                  <span class="text-emerald-500">✓</span> No long-term contracts
-                </div>
-                <div class="flex items-center gap-1">
-                  <span class="text-emerald-500">✓</span> Keep your existing
-                  website
-                </div>
-                <div class="flex items-center gap-1">
-                  <span class="text-emerald-500">✓</span> Deposits direct to you
-                </div>
-              </div>
-
-              <div class="flex flex-wrap gap-2 text-xs text-slate-600">
-                <span>Ideal for:</span>
-                <span
-                  class="inline-flex items-center gap-1 rounded-full bg-white border border-slate-200 px-2 py-1"
-                  >🍕 Pizza</span
-                >
-                <span
-                  class="inline-flex items-center gap-1 rounded-full bg-white border border-slate-200 px-2 py-1"
-                  >🍺 Brewpubs</span
-                >
-                <span
-                  class="inline-flex items-center gap-1 rounded-full bg-white border border-slate-200 px-2 py-1"
-                  >🍽 Diners & bars</span
-                >
-              </div>
-            </div>
-
-            <!-- Right: dashboard card -->
-            <div
-              class="mt-6 lg:mt-0 bg-white rounded-3xl shadow-card border border-slate-100 overflow-hidden"
-            >
-              <div
-                class="bg-slate-900 text-[11px] text-slate-100 px-4 py-3 flex items-center justify-between"
-              >
-                <span>Online Ordering Dashboard</span>
-                <span class="flex items-center gap-1 text-emerald-300">
-                  <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
-                  Live
-                </span>
-              </div>
-
-              <div class="p-4 sm:p-5 space-y-4">
-                <!-- Top metrics -->
-                <div class="grid sm:grid-cols-3 gap-3 text-xs">
-                  <div
-                    class="rounded-xl bg-emerald-50 border border-emerald-100 p-3"
+          <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+              <!-- left -->
+              <div class="space-y-8">
+                <div>
+                  <span
+                    class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 rounded-full text-sm font-medium text-slate-700"
                   >
-                    <div class="text-[11px] text-emerald-800">
-                      Monthly Revenue
-                    </div>
-                    <div class="text-lg font-semibold text-emerald-900">
-                      $27,840
-                    </div>
-                    <div class="text-[11px] text-emerald-700 mt-1">
-                      +23% vs last month
-                    </div>
+                    <span
+                      class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"
+                    ></span>
+                    Square Online Partner
+                  </span>
+                </div>
+
+                <h1
+                  class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 leading-[1.1]"
+                >
+                  Turn your website into a
+                  <span class="relative">
+                    <span
+                      class="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600"
+                    >
+                      revenue engine
+                    </span>
+                  </span>
+                </h1>
+
+                <p
+                  class="text-lg lg:text-xl text-slate-600 leading-relaxed max-w-xl"
+                >
+                  Meridian helps independent restaurants launch and manage
+                  online ordering using Square – without changing your website,
+                  staff, or POS. We handle setup, menu builds, integration, and
+                  ongoing management so you can focus on food.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                  <a
+                    href="#cta"
+                    class="inline-flex items-center justify-center bg-slate-900 hover:bg-slate-800 text-white rounded-full px-8 h-14 text-base"
+                  >
+                    Schedule a 20-Minute Demo
+                    <span class="ml-2">↗</span>
+                  </a>
+                  <button
+                    onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})"
+                    class="inline-flex items-center justify-center rounded-full px-8 h-14 text-base border border-slate-300 hover:bg-slate-50"
+                  >
+                    View Pricing
+                    <span class="ml-2">→</span>
+                  </button>
+                </div>
+
+                <div
+                  class="flex flex-wrap items-center gap-x-6 gap-y-3 pt-4 text-sm text-slate-600"
+                >
+                  <div class="flex items-center gap-2">
+                    <span class="text-emerald-600">✔</span> No long-term
+                    contracts
                   </div>
-                  <div
-                    class="rounded-xl bg-orange-50 border border-orange-100 p-3"
-                  >
-                    <div class="text-[11px] text-orange-800">Avg. Ticket</div>
-                    <div class="text-lg font-semibold text-orange-900">
-                      $34.60
-                    </div>
-                    <div class="text-[11px] text-orange-700 mt-1">
-                      Upsells active
-                    </div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-emerald-600">✔</span> Keep your existing
+                    website
                   </div>
-                  <div
-                    class="rounded-xl bg-sky-50 border border-sky-100 p-3"
-                  >
-                    <div class="text-[11px] text-sky-800">Time to Launch</div>
-                    <div class="text-lg font-semibold text-sky-900">7–10</div>
-                    <div class="text-[11px] text-sky-700 mt-1">
-                      days typical
-                    </div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-emerald-600">✔</span> Deposits direct to
+                    you
                   </div>
                 </div>
 
-                <!-- Live orders -->
-                <div class="mt-2 space-y-2 text-xs">
-                  <div
-                    class="flex items-center justify-between text-[11px] text-slate-500 mb-1"
-                  >
-                    <span>Live Orders</span>
-                    <span class="text-emerald-600 flex items-center gap-1">
-                      <span
-                        class="h-1.5 w-1.5 rounded-full bg-emerald-500"
-                      ></span>
-                      Square Online
+                <div class="flex items-center gap-4 pt-2">
+                  <span class="text-sm text-slate-500">Ideal for:</span>
+                  <div class="flex items-center gap-3 text-xs font-medium">
+                    <span
+                      class="flex items-center gap-1.5 px-3 py-1.5 bg-white rounded-full border border-slate-200 text-slate-600"
+                    >
+                      🍕 Pizza
+                    </span>
+                    <span
+                      class="flex items-center gap-1.5 px-3 py-1.5 bg-white rounded-full border border-slate-200 text-slate-600"
+                    >
+                      🍺 Brewpubs
+                    </span>
+                    <span
+                      class="flex items-center gap-1.5 px-3 py-1.5 bg-white rounded-full border border-slate-200 text-slate-600"
+                    >
+                      🍽 Diners
                     </span>
                   </div>
+                </div>
+              </div>
 
-                  <div
-                    class="rounded-2xl border border-slate-100 bg-slate-50 px-3 py-2.5 flex items-center justify-between gap-3"
-                  >
-                    <div class="space-y-0.5">
-                      <div class="text-xs font-semibold text-slate-900">
-                        Thirsty Pagan
-                      </div>
-                      <div class="text-[11px] text-slate-600">
-                        Large pizza · garlic knots · 2 sodas
-                      </div>
+              <!-- right dashboard -->
+              <div class="relative">
+                <div
+                  class="absolute -inset-4 bg-gradient-to-r from-amber-500/20 to-orange-500/20 rounded-3xl blur-2xl"
+                ></div>
+                <div
+                  class="relative bg-white rounded-2xl shadow-2xl shadow-slate-200/50 border border-slate-200/60 overflow-hidden"
+                >
+                  <div class="bg-slate-900 px-6 py-4 flex items-center gap-2">
+                    <div class="flex gap-1.5">
+                      <div
+                        class="w-3 h-3 rounded-full bg-red-500"
+                      ></div>
+                      <div
+                        class="w-3 h-3 rounded-full bg-yellow-500"
+                      ></div>
+                      <div
+                        class="w-3 h-3 rounded-full bg-green-500"
+                      ></div>
                     </div>
-                    <div class="text-right space-y-0.5">
-                      <div class="text-xs font-semibold text-emerald-600">
-                        +$42.50
-                      </div>
-                      <div class="text-[11px] text-slate-500">
-                        Pickup · 6:45 PM
-                      </div>
-                    </div>
+                    <span class="ml-4 text-sm text-slate-400"
+                      >Online Ordering Dashboard</span
+                    >
                   </div>
 
-                  <div
-                    class="rounded-2xl border border-slate-100 bg-slate-50 px-3 py-2.5 flex items-center justify-between gap-3"
-                  >
-                    <div class="space-y-0.5">
-                      <div class="text-xs font-semibold text-slate-900">
-                        Gronk’s Grill
+                  <div class="p-6 space-y-6 text-sm">
+                    <!-- stats -->
+                    <div class="grid grid-cols-3 gap-4">
+                      <div
+                        class="bg-gradient-to-br from-emerald-50 to-emerald-100/50 rounded-xl p-4"
+                      >
+                        <p class="text-xs text-emerald-700 font-medium">
+                          Monthly Revenue
+                        </p>
+                        <p class="text-2xl font-bold text-emerald-900 mt-1">
+                          $27,840
+                        </p>
+                        <p
+                          class="text-xs text-emerald-600 mt-1 flex items-center gap-1"
+                        >
+                          ⬆︎ +23% vs last month
+                        </p>
                       </div>
-                      <div class="text-[11px] text-slate-600">
-                        2 burgers · fries · cheese curds
+                      <div
+                        class="bg-gradient-to-br from-amber-50 to-amber-100/50 rounded-xl p-4"
+                      >
+                        <p class="text-xs text-amber-700 font-medium">
+                          Avg. Ticket
+                        </p>
+                        <p class="text-2xl font-bold text-amber-900 mt-1">
+                          $34.60
+                        </p>
+                        <p class="text-xs text-amber-600 mt-1">
+                          Upsells active
+                        </p>
+                      </div>
+                      <div
+                        class="bg-gradient-to-br from-slate-50 to-slate-100/50 rounded-xl p-4"
+                      >
+                        <p class="text-xs text-slate-600 font-medium">
+                          Time to Launch
+                        </p>
+                        <p class="text-2xl font-bold text-slate-900 mt-1">
+                          7–10
+                        </p>
+                        <p class="text-xs text-slate-500 mt-1">days typical</p>
                       </div>
                     </div>
-                    <div class="text-right space-y-0.5">
-                      <div class="text-xs font-semibold text-emerald-600">
-                        +$31.20
+
+                    <!-- live orders -->
+                    <div>
+                      <div
+                        class="flex items-center justify-between mb-3 text-xs"
+                      >
+                        <span class="font-semibold text-slate-900"
+                          >Live Orders</span
+                        >
+                        <span
+                          class="flex items-center gap-1.5 text-emerald-600"
+                        >
+                          <span
+                            class="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse"
+                          ></span>
+                          Square Online
+                        </span>
                       </div>
-                      <div class="text-[11px] text-slate-500">
-                        Pickup · 7:10 PM
+
+                      <div class="space-y-3 text-xs">
+                        <div
+                          class="flex items-center justify-between p-3 bg-slate-50 rounded-xl"
+                        >
+                          <div class="flex items-center gap-3">
+                            <div
+                              class="w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-sm"
+                            >
+                              🍽
+                            </div>
+                            <div>
+                              <p
+                                class="text-sm font-medium text-slate-900"
+                              >
+                                Thirsty Pagan
+                              </p>
+                              <p class="text-[11px] text-slate-500">
+                                Large pizza · Garlic knots · 2 sodas
+                              </p>
+                            </div>
+                          </div>
+                          <div class="text-right">
+                            <p
+                              class="text-sm font-semibold text-emerald-600"
+                            >
+                              +$42.50
+                            </p>
+                            <p class="text-[11px] text-slate-500">
+                              Pickup · 6:45 PM
+                            </p>
+                          </div>
+                        </div>
+
+                        <div
+                          class="flex items-center justify-between p-3 bg-slate-50 rounded-xl"
+                        >
+                          <div class="flex items-center gap-3">
+                            <div
+                              class="w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-sm"
+                            >
+                              🍽
+                            </div>
+                            <div>
+                              <p
+                                class="text-sm font-medium text-slate-900"
+                              >
+                                Gronk's Grill
+                              </p>
+                              <p class="text-[11px] text-slate-500">
+                                2 burgers · Fries · Cheese curds
+                              </p>
+                            </div>
+                          </div>
+                          <div class="text-right">
+                            <p
+                              class="text-sm font-semibold text-emerald-600"
+                            >
+                              +$31.20
+                            </p>
+                            <p class="text-[11px] text-slate-500">
+                              Pickup · 7:10 PM
+                            </p>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -273,227 +398,342 @@
           </div>
         </section>
 
-        <!-- SERVICES (3 pillars, like Meridian cards) -->
-        <section id="services" class="bg-slate-50 border-b border-slate-200">
-          <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
-            <div class="text-center mb-10">
-              <p class="text-[11px] font-semibold tracking-[0.25em] text-accent-500">
-                OUR SERVICES
-              </p>
-              <h2 class="mt-2 text-2xl sm:text-3xl font-semibold">
-                What OrderLine does for your restaurant
+        <!-- SERVICES -->
+        <section
+          id="services"
+          class="py-24 lg:py-32 bg-slate-50 border-t border-slate-100"
+        >
+          <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+              <span
+                class="text-sm font-semibold text-amber-600 tracking-wide uppercase"
+                >Our Services</span
+              >
+              <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mt-4">
+                What Meridian does for your restaurant
               </h2>
-              <p class="mt-3 text-sm text-slate-600 max-w-2xl mx-auto">
+              <p class="text-lg text-slate-600 mt-4">
                 We specialize in online order integration, setup, and ongoing
                 management for independent restaurants. No complex software, no
-                new workflows—just more online orders.
+                new staff workflow – just more orders.
               </p>
             </div>
 
-            <div class="grid lg:grid-cols-3 gap-6 text-sm">
-              <!-- 01 Setup -->
+            <div class="grid md:grid-cols-2 gap-6 lg:gap-8 text-sm">
+              <!-- service cards simplified from React version -->
               <div
-                class="bg-white rounded-3xl border border-slate-100 shadow-sm p-6 relative"
+                class="bg-white border-0 rounded-3xl shadow-soft p-8 hover:shadow-lg transition-shadow"
               >
-                <div
-                  class="absolute -top-3 left-6 flex items-center justify-center h-9 w-9 rounded-2xl bg-slate-900 text-white text-xs font-semibold shadow-md"
-                >
-                  01
+                <div class="flex items-start justify-between mb-6">
+                  <div class="flex items-center gap-4">
+                    <span
+                      class="text-4xl font-bold text-slate-200"
+                      >01</span
+                    >
+                    <div>
+                      <h3 class="text-xl font-bold text-slate-900">
+                        Online Ordering Setup
+                      </h3>
+                      <p class="text-sm text-amber-600 font-medium">
+                        Square Online Configuration
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="p-3 bg-slate-100 rounded-xl text-slate-700 text-lg"
+                  >
+                    ⚙️
+                  </div>
                 </div>
-                <div class="mt-4">
-                  <h3 class="text-base font-semibold">
-                    Online Ordering Setup
-                  </h3>
-                  <p class="text-[11px] text-accent-500 font-medium mt-1">
-                    Square Online configuration
-                  </p>
-                </div>
-                <p class="mt-3 text-xs text-slate-600 leading-relaxed">
+                <p class="text-slate-600 mb-6">
                   We build your complete online ordering experience using
-                  Square: menu items, modifiers, combos, taxes, pickup windows,
-                  and kitchen routing—tuned to your operations.
+                  Square Online: menu items, modifiers, combos, taxes, pickup
+                  windows, and kitchen routing – tuned to your operations.
                 </p>
-                <ul class="mt-4 space-y-1.5 text-xs text-slate-700">
-                  <li>✔ Digital menu & categories based on your current menu</li>
-                  <li>✔ Modifiers for toppings, sides, and cooking preferences</li>
+                <ul class="space-y-2 text-slate-600">
+                  <li>✔ Digital menu & categories based on your menu</li>
                   <li>
-                    ✔ Pickup/dine-in/takeout rules aligned with your real flow
+                    ✔ Modifiers for toppings, sides, cooking preferences
                   </li>
-                  <li>✔ Hours, blackout dates, and order lead times</li>
+                  <li>✔ Rules for pickup / dine-in / takeout</li>
+                  <li>✔ Hours, blackout dates, and lead times</li>
                 </ul>
               </div>
 
-              <!-- 02 Website integration -->
               <div
-                class="bg-white rounded-3xl border border-slate-100 shadow-sm p-6 relative"
+                class="bg-white border-0 rounded-3xl shadow-soft p-8 hover:shadow-lg transition-shadow"
               >
-                <div
-                  class="absolute -top-3 left-6 flex items-center justify-center h-9 w-9 rounded-2xl bg-slate-900 text-white text-xs font-semibold shadow-md"
-                >
-                  02
+                <div class="flex items-start justify-between mb-6">
+                  <div class="flex items-center gap-4">
+                    <span
+                      class="text-4xl font-bold text-slate-200"
+                      >02</span
+                    >
+                    <div>
+                      <h3 class="text-xl font-bold text-slate-900">
+                        Website Integration
+                      </h3>
+                      <p class="text-sm text-amber-600 font-medium">
+                        Seamless “Order Online” Experience
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="p-3 bg-slate-100 rounded-xl text-slate-700 text-lg"
+                  >
+                    🌐
+                  </div>
                 </div>
-                <div class="mt-4">
-                  <h3 class="text-base font-semibold">Website Integration</h3>
-                  <p class="text-[11px] text-accent-500 font-medium mt-1">
-                    Seamless “Order Online” experience
-                  </p>
-                </div>
-                <p class="mt-3 text-xs text-slate-600 leading-relaxed">
-                  We integrate ordering into your existing website so guests
-                  never feel bounced around the internet.
+                <p class="text-slate-600 mb-6">
+                  We integrate ordering into your existing website using clean
+                  links or embedded experiences so guests aren’t bounced around.
                 </p>
-                <ul class="mt-4 space-y-1.5 text-xs text-slate-700">
+                <ul class="space-y-2 text-slate-600">
                   <li>✔ “Order Online” buttons on key pages</li>
-                  <li>✔ Clean, mobile-first ordering flow for guests</li>
+                  <li>✔ Mobile-first ordering flow</li>
                   <li>✔ Optional branded domain or subdomain</li>
-                  <li>✔ Configured for clarity, speed, and SEO</li>
+                  <li>✔ Configured for speed, clarity, and SEO</li>
                 </ul>
               </div>
 
-              <!-- 03 Ongoing management -->
               <div
-                class="bg-white rounded-3xl border border-slate-100 shadow-sm p-6 relative"
+                class="bg-white border-0 rounded-3xl shadow-soft p-8 hover:shadow-lg transition-shadow"
               >
-                <div
-                  class="absolute -top-3 left-6 flex items-center justify-center h-9 w-9 rounded-2xl bg-slate-900 text-white text-xs font-semibold shadow-md"
-                >
-                  03
+                <div class="flex items-start justify-between mb-6">
+                  <div class="flex items-center gap-4">
+                    <span
+                      class="text-4xl font-bold text-slate-200"
+                      >03</span
+                    >
+                    <div>
+                      <h3 class="text-xl font-bold text-slate-900">
+                        Ongoing Management
+                      </h3>
+                      <p class="text-sm text-amber-600 font-medium">
+                        Menu Updates & Performance Monitoring
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="p-3 bg-slate-100 rounded-xl text-slate-700 text-lg"
+                  >
+                    📊
+                  </div>
                 </div>
-                <div class="mt-4">
-                  <h3 class="text-base font-semibold">Ongoing Management</h3>
-                  <p class="text-[11px] text-accent-500 font-medium mt-1">
-                    Menu updates & performance monitoring
-                  </p>
-                </div>
-                <p class="mt-3 text-xs text-slate-600 leading-relaxed">
-                  Online ordering is not “set and forget.” We maintain and
+                <p class="text-slate-600 mb-6">
+                  Online ordering isn’t “set and forget.” We maintain and
                   optimize so customers keep ordering and your kitchen stays
                   sane.
                 </p>
-                <ul class="mt-4 space-y-1.5 text-xs text-slate-700">
+                <ul class="space-y-2 text-slate-600">
                   <li>✔ Price changes, new items, LTOs, and 86’d items</li>
                   <li>✔ Seasonal menus and holiday hours</li>
-                  <li>✔ Monitoring busy nights and order flow</li>
-                  <li>✔ Monthly performance snapshots & suggestions</li>
+                  <li>✔ Monthly performance snapshots & insights</li>
+                  <li>✔ Suggestions to increase average ticket</li>
+                </ul>
+              </div>
+
+              <div
+                class="bg-white border-0 rounded-3xl shadow-soft p-8 hover:shadow-lg transition-shadow"
+              >
+                <div class="flex items-start justify-between mb-6">
+                  <div class="flex items-center gap-4">
+                    <span
+                      class="text-4xl font-bold text-slate-200"
+                      >04</span
+                    >
+                    <div>
+                      <h3 class="text-xl font-bold text-slate-900">
+                        Full Website Build
+                      </h3>
+                      <p class="text-sm text-amber-600 font-medium">
+                        Complete Digital Presence
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="p-3 bg-slate-100 rounded-xl text-slate-700 text-lg"
+                  >
+                    ⚡
+                  </div>
+                </div>
+                <p class="text-slate-600 mb-6">
+                  No website? We’ll build a modern restaurant site with
+                  integrated online ordering, optimized for guests on the go.
+                </p>
+                <ul class="space-y-2 text-slate-600">
+                  <li>✔ Custom-designed restaurant website</li>
+                  <li>✔ Built-in online ordering from day one</li>
+                  <li>✔ Mobile-optimized for guests</li>
+                  <li>✔ SEO-ready so customers can find you</li>
                 </ul>
               </div>
             </div>
           </div>
         </section>
 
-                <!-- ANALYTICS / OPTIMIZATION SECTION -->
-        <section class="bg-white border-b border-slate-200">
-          <div
-            class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16 grid lg:grid-cols-2 gap-10 items-center"
-          >
-            <div>
-              <p
-                class="text-[11px] font-semibold tracking-[0.25em] text-accent-500"
-              >
-                ANALYTICS & INSIGHTS
-              </p>
-              <h2 class="mt-2 text-2xl sm:text-3xl font-semibold">
-                Data-driven decisions for your kitchen
-              </h2>
-              <p class="mt-3 text-sm text-slate-600 max-w-xl">
-                As an optional layer, OrderLine reviews your performance and
-                helps you grow online revenue. Know what's selling, when it's
-                selling, and how to increase your average ticket.
-              </p>
+        <!-- ANALYTICS -->
+        <section class="py-24 lg:py-32 bg-white">
+          <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+              <div>
+                <span
+                  class="text-sm font-semibold text-amber-600 tracking-wide uppercase"
+                  >Analytics & Insights</span
+                >
+                <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mt-4">
+                  Data-driven decisions for your kitchen
+                </h2>
+                <p class="text-lg text-slate-600 mt-4 mb-8">
+                  Get monthly performance snapshots and actionable insights to
+                  grow your online revenue. Know what's selling, when it's
+                  selling, and how to increase your average ticket.
+                </p>
 
-              <div class="mt-6 space-y-3 text-xs">
-                <!-- feature pills (unchanged) -->
-                ...
-              </div>
-            </div>
-
-            <!-- Bar chart -->
-            <div
-              class="bg-white rounded-3xl border border-slate-100 shadow-card p-5"
-            >
-              <div
-                class="flex items-center justify-between text-xs text-slate-500 mb-4"
-              >
-                <span class="font-medium text-slate-900">
-                  Monthly Performance
-                </span>
-                <span>Last 6 months</span>
-              </div>
-
-              <!-- animated bars -->
-              <div
-                id="analytics-chart"
-                class="flex items-end gap-3 h-40 mb-4"
-              >
-                <!-- Jan -->
-                <div class="flex-1 flex flex-col justify-end gap-1 text-[11px]">
+                <div class="space-y-4 text-sm">
                   <div
-                    class="w-full rounded-t-xl bg-gradient-to-t from-yellow-400 to-orange-400 shadow-sm transition-all duration-700 ease-out"
-                    style="height: 0%"
-                    data-height="35"
-                  ></div>
-                  <span class="text-center text-slate-500 mt-1">Jan</span>
-                </div>
-                <!-- Feb -->
-                <div class="flex-1 flex flex-col justify-end gap-1 text-[11px]">
+                    class="flex items-start gap-4 p-4 bg-slate-50 rounded-xl"
+                  >
+                    <div class="p-2 bg-amber-100 rounded-lg">📈</div>
+                    <div>
+                      <h4 class="font-semibold text-slate-900">
+                        Revenue Tracking
+                      </h4>
+                      <p class="text-slate-600">
+                        See daily, weekly, and monthly trends at a glance.
+                      </p>
+                    </div>
+                  </div>
                   <div
-                    class="w-full rounded-t-xl bg-gradient-to-t from-yellow-400 to-orange-400 shadow-sm transition-all duration-700 ease-out"
-                    style="height: 0%"
-                    data-height="45"
-                  ></div>
-                  <span class="text-center text-slate-500 mt-1">Feb</span>
-                </div>
-                <!-- Mar -->
-                <div class="flex-1 flex flex-col justify-end gap-1 text-[11px]">
+                    class="flex items-start gap-4 p-4 bg-slate-50 rounded-xl"
+                  >
+                    <div class="p-2 bg-amber-100 rounded-lg">⭐</div>
+                    <div>
+                      <h4 class="font-semibold text-slate-900">
+                        Popular Items
+                      </h4>
+                      <p class="text-slate-600">
+                        Know which menu items drive the most orders.
+                      </p>
+                    </div>
+                  </div>
                   <div
-                    class="w-full rounded-t-xl bg-gradient-to-t from-yellow-400 to-orange-400 shadow-sm transition-all duration-700 ease-out"
-                    style="height: 0%"
-                    data-height="55"
-                  ></div>
-                  <span class="text-center text-slate-500 mt-1">Mar</span>
-                </div>
-                <!-- Apr -->
-                <div class="flex-1 flex flex-col justify-end gap-1 text-[11px]">
+                    class="flex items-start gap-4 p-4 bg-slate-50 rounded-xl"
+                  >
+                    <div class="p-2 bg-amber-100 rounded-lg">🕒</div>
+                    <div>
+                      <h4 class="font-semibold text-slate-900">Peak Hours</h4>
+                      <p class="text-slate-600">
+                        Optimize staffing with order timing insights.
+                      </p>
+                    </div>
+                  </div>
                   <div
-                    class="w-full rounded-t-xl bg-gradient-to-t from-yellow-400 to-orange-400 shadow-sm transition-all duration-700 ease-out"
-                    style="height: 0%"
-                    data-height="70"
-                  ></div>
-                  <span class="text-center text-slate-500 mt-1">Apr</span>
-                </div>
-                <!-- May -->
-                <div class="flex-1 flex flex-col justify-end gap-1 text-[11px]">
-                  <div
-                    class="w-full rounded-t-xl bg-gradient-to-t from-yellow-400 to-orange-400 shadow-sm transition-all duration-700 ease-out"
-                    style="height: 0%"
-                    data-height="62"
-                  ></div>
-                  <span class="text-center text-slate-500 mt-1">May</span>
-                </div>
-                <!-- Jun -->
-                <div class="flex-1 flex flex-col justify-end gap-1 text-[11px]">
-                  <div
-                    class="w-full rounded-t-xl bg-gradient-to-t from-yellow-400 to-orange-400 shadow-sm transition-all duration-700 ease-out"
-                    style="height: 0%"
-                    data-height="82"
-                  ></div>
-                  <span class="text-center text-slate-500 mt-1">Jun</span>
-                </div>
-              </div>
-
-              <div
-                class="flex items-center justify-between text-xs text-slate-600"
-              >
-                <div>
-                  <div class="text-[11px] text-slate-500">Total Revenue</div>
-                  <div class="text-base font-semibold text-slate-900">
-                    $142,580
+                    class="flex items-start gap-4 p-4 bg-slate-50 rounded-xl"
+                  >
+                    <div class="p-2 bg-amber-100 rounded-lg">💡</div>
+                    <div>
+                      <h4 class="font-semibold text-slate-900">
+                        Upsell Performance
+                      </h4>
+                      <p class="text-slate-600">
+                        Track which modifiers and combos convert best.
+                      </p>
+                    </div>
                   </div>
                 </div>
-                <div>
-                  <div class="text-[11px] text-slate-500">Growth</div>
-                  <div class="text-base font-semibold text-emerald-600">
-                    +34%
+              </div>
+
+              <!-- bar chart card -->
+              <div class="relative">
+                <div
+                  class="absolute -inset-4 bg-gradient-to-r from-slate-100 to-amber-100/50 rounded-3xl blur-2xl"
+                ></div>
+                <div
+                  class="relative bg-white rounded-2xl shadow-xl border border-slate-200 p-6"
+                >
+                  <div
+                    class="flex items-center justify-between mb-6 text-sm text-slate-500"
+                  >
+                    <h3 class="font-semibold text-slate-900">
+                      Monthly Performance
+                    </h3>
+                    <span>Last 6 months</span>
+                  </div>
+
+                  <div
+                    id="bar-chart"
+                    class="h-48 flex items-end justify-between gap-2 mb-4"
+                  >
+                    <!-- bars (heights via data-height, animated by JS) -->
+                    <div class="flex-1 flex flex-col justify-end gap-1">
+                      <div
+                        class="bar w-full rounded-t-lg bg-gradient-to-t from-amber-500 to-amber-400"
+                        style="height: 0%"
+                        data-height="40"
+                      ></div>
+                    </div>
+                    <div class="flex-1 flex flex-col justify-end gap-1">
+                      <div
+                        class="bar w-full rounded-t-lg bg-gradient-to-t from-amber-500 to-amber-400"
+                        style="height: 0%"
+                        data-height="52"
+                      ></div>
+                    </div>
+                    <div class="flex-1 flex flex-col justify-end gap-1">
+                      <div
+                        class="bar w-full rounded-t-lg bg-gradient-to-t from-amber-500 to-amber-400"
+                        style="height: 0%"
+                        data-height="48"
+                      ></div>
+                    </div>
+                    <div class="flex-1 flex flex-col justify-end gap-1">
+                      <div
+                        class="bar w-full rounded-t-lg bg-gradient-to-t from-amber-500 to-amber-400"
+                        style="height: 0%"
+                        data-height="61"
+                      ></div>
+                    </div>
+                    <div class="flex-1 flex flex-col justify-end gap-1">
+                      <div
+                        class="bar w-full rounded-t-lg bg-gradient-to-t from-amber-500 to-amber-400"
+                        style="height: 0%"
+                        data-height="55"
+                      ></div>
+                    </div>
+                    <div class="flex-1 flex flex-col justify-end gap-1">
+                      <div
+                        class="bar w-full rounded-t-lg bg-gradient-to-t from-amber-500 to-amber-400"
+                        style="height: 0%"
+                        data-height="75"
+                      ></div>
+                    </div>
+                  </div>
+
+                  <div class="flex justify-between text-xs text-slate-500">
+                    <span>Jan</span>
+                    <span>Feb</span>
+                    <span>Mar</span>
+                    <span>Apr</span>
+                    <span>May</span>
+                    <span>Jun</span>
+                  </div>
+
+                  <div
+                    class="mt-6 pt-6 border-t grid grid-cols-2 gap-4 text-sm"
+                  >
+                    <div>
+                      <p class="text-slate-500">Total Revenue</p>
+                      <p class="text-2xl font-bold text-slate-900">
+                        $142,580
+                      </p>
+                    </div>
+                    <div>
+                      <p class="text-slate-500">Growth</p>
+                      <p class="text-2xl font-bold text-emerald-600">
+                        +34%
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -501,112 +741,99 @@
           </div>
         </section>
 
-        <!-- PROCESS (dark band) -->
+        <!-- HOW IT WORKS -->
         <section
-          id="process"
-          class="bg-slate-900 text-slate-50 py-12 sm:py-16 border-b border-slate-800"
+          id="how-it-works"
+          class="py-24 lg:py-32 bg-slate-900 text-white overflow-hidden"
         >
-          <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="text-center mb-10">
-              <p
-                class="text-[11px] font-semibold tracking-[0.25em] text-accent-500"
+          <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+              <span
+                class="text-sm font-semibold text-amber-400 tracking-wide uppercase"
+                >Process</span
               >
-                PROCESS
-              </p>
-              <h2 class="mt-2 text-2xl sm:text-3xl font-semibold">
+              <h2 class="text-3xl lg:text-4xl font-bold mt-4">
                 How it works
               </h2>
-              <p
-                class="mt-3 text-sm text-slate-300 max-w-2xl mx-auto leading-relaxed"
-              >
+              <p class="text-lg text-slate-400 mt-4">
                 From discovery to launch, we guide you through a simple,
-                structured process—usually going from “no online ordering” to
+                structured process – usually going from “no online ordering” to
                 live orders in about a week.
               </p>
             </div>
 
-            <div
-              class="grid md:grid-cols-4 gap-4 text-sm items-stretch relative"
-            >
-              <!-- connectors -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-sm">
               <div
-                class="hidden md:block absolute inset-x-[12.5%] top-16 h-px bg-slate-700"
-              ></div>
-              <div
-                class="hidden md:block absolute inset-x-[37.5%] top-16 h-px bg-slate-700"
-              ></div>
-              <div
-                class="hidden md:block absolute inset-x-[62.5%] top-16 h-px bg-slate-700"
-              ></div>
-
-              <!-- step cards -->
-              <div
-                class="relative bg-slate-900/80 border border-slate-700 rounded-3xl px-5 py-5 flex flex-col gap-2"
+                class="relative bg-slate-800/50 rounded-2xl p-6 border border-slate-700/50"
               >
                 <div
-                  class="h-8 w-8 rounded-2xl bg-accent-500 text-slate-900 flex items-center justify-center text-xs font-semibold shadow-md"
+                  class="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-600 rounded-xl flex items-center justify-center text-xl font-bold mb-4"
                 >
                   1
                 </div>
-                <h3 class="mt-1 text-base font-semibold">Discovery Call</h3>
-                <p class="text-xs text-slate-300">
+                <h3 class="text-xl font-semibold mb-2">Discovery Call</h3>
+                <p class="text-slate-400">
                   We learn about your menu, volume, hours, and kitchen flow so
-                  we design an ordering system that fits your reality.
+                  we design an ordering system that works with your reality.
                 </p>
               </div>
               <div
-                class="relative bg-slate-900/80 border border-slate-700 rounded-3xl px-5 py-5 flex flex-col gap-2"
+                class="relative bg-slate-800/50 rounded-2xl p-6 border border-slate-700/50"
               >
                 <div
-                  class="h-8 w-8 rounded-2xl bg-accent-500 text-slate-900 flex items-center justify-center text-xs font-semibold shadow-md"
+                  class="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-600 rounded-xl flex items-center justify-center text-xl font-bold mb-4"
                 >
                   2
                 </div>
-                <h3 class="mt-1 text-base font-semibold">Square & Menu Build</h3>
-                <p class="text-xs text-slate-300">
+                <h3 class="text-xl font-semibold mb-2">
+                  Square & Menu Build
+                </h3>
+                <p class="text-slate-400">
                   We configure Square Online, connect your bank, build your
-                  digital menu, and set the rules behind the scenes.
+                  digital menu, and set all the rules behind the scenes.
                 </p>
               </div>
               <div
-                class="relative bg-slate-900/80 border border-slate-700 rounded-3xl px-5 py-5 flex flex-col gap-2"
+                class="relative bg-slate-800/50 rounded-2xl p-6 border border-slate-700/50"
               >
                 <div
-                  class="h-8 w-8 rounded-2xl bg-accent-500 text-slate-900 flex items-center justify-center text-xs font-semibold shadow-md"
+                  class="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-600 rounded-xl flex items-center justify-center text-xl font-bold mb-4"
                 >
                   3
                 </div>
-                <h3 class="mt-1 text-base font-semibold">Website Integration</h3>
-                <p class="text-xs text-slate-300">
+                <h3 class="text-xl font-semibold mb-2">
+                  Website Integration
+                </h3>
+                <p class="text-slate-400">
                   We add “Order Online” entry points to your website and test
                   the full experience on mobile and desktop.
                 </p>
               </div>
               <div
-                class="relative bg-slate-900/80 border border-slate-700 rounded-3xl px-5 py-5 flex flex-col gap-2"
+                class="relative bg-slate-800/50 rounded-2xl p-6 border border-slate-700/50"
               >
                 <div
-                  class="h-8 w-8 rounded-2xl bg-accent-500 text-slate-900 flex items-center justify-center text-xs font-semibold shadow-md"
+                  class="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-600 rounded-xl flex items-center justify-center text-xl font-bold mb-4"
                 >
                   4
                 </div>
-                <h3 class="mt-1 text-base font-semibold">Launch & Manage</h3>
-                <p class="text-xs text-slate-300">
+                <h3 class="text-xl font-semibold mb-2">
+                  Launch & Manage
+                </h3>
+                <p class="text-slate-400">
                   We go live, monitor the first week closely, and provide
                   ongoing support, menu updates, and performance insights.
                 </p>
               </div>
             </div>
 
-            <div class="mt-10 text-center">
-              <p class="text-sm text-slate-300 mb-4">
-                Ready to get started?
-              </p>
+            <div class="text-center mt-12">
+              <p class="text-slate-400 mb-6">Ready to get started?</p>
               <a
-                href="#contact"
-                class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-white text-slate-900 text-sm font-medium hover:bg-slate-100"
+                href="#cta"
+                class="inline-flex items-center gap-2 bg-white text-slate-900 hover:bg-slate-100 rounded-full px-8 h-14 text-base"
               >
-                Book your discovery call
+                Book Your Discovery Call
                 <span>📅</span>
               </a>
             </div>
@@ -616,227 +843,268 @@
         <!-- PRICING -->
         <section
           id="pricing"
-          class="bg-slate-50 border-b border-slate-200 py-12 sm:py-16"
+          class="py-24 lg:py-32 bg-white border-t border-slate-100"
         >
-          <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="text-center mb-10">
-              <p
-                class="text-[11px] font-semibold tracking-[0.25em] text-accent-500"
+          <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+              <span
+                class="text-sm font-semibold text-amber-600 tracking-wide uppercase"
+                >Pricing</span
               >
-                PRICING
-              </p>
-              <h2 class="mt-2 text-2xl sm:text-3xl font-semibold">
+              <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mt-4">
                 Simple, aligned pricing
               </h2>
-              <p
-                class="mt-3 text-sm text-slate-600 max-w-2xl mx-auto leading-relaxed"
-              >
+              <p class="text-lg text-slate-600 mt-4">
                 Our pricing is designed so we only win when you do. You get a
                 predictable base fee plus a small percentage of online sales to
                 align incentives.
               </p>
             </div>
 
-            <div class="max-w-3xl mx-auto">
-              <!-- main card -->
-              <div
-                class="bg-white rounded-3xl shadow-card border border-slate-100 p-6 sm:p-8 text-sm"
-              >
-                <div class="flex justify-between items-start gap-3 mb-6">
-                  <div>
-                    <h3 class="text-lg font-semibold">
+            <div class="max-w-xl mx-auto">
+              <div class="relative">
+                <div
+                  class="absolute -inset-2 bg-gradient-to-r from-amber-500/20 to-orange-500/20 rounded-3xl blur-xl"
+                ></div>
+                <div
+                  class="relative bg-white border-2 border-slate-200 shadow-2xl rounded-3xl overflow-hidden p-8 lg:p-10 text-sm"
+                >
+                  <div
+                    class="absolute top-0 right-0 bg-gradient-to-l from-amber-500 to-orange-500 text-white text-xs font-semibold px-4 py-1 rounded-bl-lg"
+                  >
+                    RECOMMENDED
+                  </div>
+
+                  <div class="text-center mb-8">
+                    <h3 class="text-2xl font-bold text-slate-900">
                       Managed Online Ordering
                     </h3>
-                    <p class="text-xs text-slate-600 mt-1">
+                    <p class="text-slate-500 mt-2">
                       Ideal for independent restaurants, bars, and pizzerias.
                     </p>
                   </div>
-                  <span
-                    class="rounded-full bg-accent-500 text-white text-[11px] px-3 py-1"
+
+                  <div
+                    class="flex items-baseline justify-center gap-2 mb-2"
                   >
-                    Recommended
-                  </span>
-                </div>
-
-                <div
-                  class="flex flex-wrap items-end gap-4 border-b border-slate-100 pb-5 mb-5"
-                >
-                  <div>
-                    <span class="text-3xl font-semibold">$250</span>
-                    <span class="text-xs text-slate-500">/month</span>
+                    <span class="text-5xl font-bold text-slate-900"
+                      >$250</span
+                    >
+                    <span class="text-slate-500">/month</span>
                   </div>
-                  <span
-                    class="inline-flex items-center rounded-full bg-orange-50 border border-orange-100 px-3 py-1 text-xs text-accent-500"
+                  <div class="text-center mb-8">
+                    <span
+                      class="inline-flex items-center gap-1 px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-sm font-medium"
+                    >
+                      + 5% of online sales
+                    </span>
+                  </div>
+
+                  <div class="space-y-4 mb-8">
+                    <div class="flex items-start gap-3">
+                      <span class="mt-0.5 text-emerald-600">✔</span>
+                      <span class="text-slate-600"
+                        >Full Square Online configuration and bank
+                        connection</span
+                      >
+                    </div>
+                    <div class="flex items-start gap-3">
+                      <span class="mt-0.5 text-emerald-600">✔</span>
+                      <span class="text-slate-600"
+                        >Digital menu build with categories, modifiers, and
+                        photos</span
+                      >
+                    </div>
+                    <div class="flex items-start gap-3">
+                      <span class="mt-0.5 text-emerald-600">✔</span>
+                      <span class="text-slate-600"
+                        >Website integration and testing</span
+                      >
+                    </div>
+                    <div class="flex items-start gap-3">
+                      <span class="mt-0.5 text-emerald-600">✔</span>
+                      <span class="text-slate-600"
+                        >Ongoing menu & price updates (within reasonable
+                        scope)</span
+                      >
+                    </div>
+                    <div class="flex items-start gap-3">
+                      <span class="mt-0.5 text-emerald-600">✔</span>
+                      <span class="text-slate-600"
+                        >Monthly performance summary and
+                        recommendations</span
+                      >
+                    </div>
+                    <div class="flex items-start gap-3">
+                      <span class="mt-0.5 text-emerald-600">✔</span>
+                      <span class="text-slate-600"
+                        >Priority support for owners and managers</span
+                      >
+                    </div>
+                  </div>
+
+                  <a
+                    href="#cta"
+                    class="inline-flex items-center justify-center w-full bg-slate-900 hover:bg-slate-800 text-white rounded-full h-14 text-base"
                   >
-                    + 5% of online sales
-                  </span>
-                </div>
+                    Talk About My Restaurant
+                    <span class="ml-2">→</span>
+                  </a>
 
-                <ul class="text-xs text-slate-700 space-y-2 mb-5">
-                  <li>✔ Full Square Online configuration and bank connection</li>
-                  <li>
-                    ✔ Digital menu build with categories, modifiers, and photos
-                  </li>
-                  <li>✔ Website integration and testing</li>
-                  <li>
-                    ✔ Ongoing menu & price updates (within reasonable scope)
-                  </li>
-                  <li>✔ Monthly performance summary & recommendations</li>
-                  <li>✔ Priority support for owners and managers</li>
-                </ul>
-
-                <a
-                  href="#contact"
-                  class="inline-flex items-center justify-center w-full rounded-full bg-slate-900 hover:bg-slate-800 text-sm font-medium text-white py-2.5 mt-1"
-                >
-                  Talk about my restaurant
-                  <span aria-hidden="true" class="ml-1">→</span>
-                </a>
-
-                <p class="text-[11px] text-slate-500 mt-3">
-                  Example: At $15,000/month in online orders, 5% = $750. With a
-                  $250 management fee, that’s $1,000/month—without your team
-                  touching the tech.
-                </p>
-
-                <p class="text-[11px] text-slate-500 mt-2">
-                  No long-term contracts. Cancel any time with 30 days’ notice.
-                </p>
-              </div>
-
-              <!-- three small cards -->
-              <div
-                class="grid sm:grid-cols-3 gap-4 mt-6 text-xs text-slate-700"
-              >
-                <div
-                  class="bg-white rounded-2xl border border-slate-100 p-4 text-left"
-                >
-                  <div class="mb-1 text-sm font-semibold">
-                    What about setup?
-                  </div>
-                  <p class="text-slate-600">
-                    Setup fees are customized based on menu size and complexity.
-                    For most single-location restaurants, setup ranges from
-                    $0–$299 and can often be rolled into the first month.
-                  </p>
-                </div>
-                <div
-                  class="bg-white rounded-2xl border border-slate-100 p-4 text-left"
-                >
-                  <div class="mb-1 text-sm font-semibold">
-                    Who controls the money?
-                  </div>
-                  <p class="text-slate-600">
-                    You do. All payments go through your Square account and
-                    deposit directly to your bank. We manage the system; you
-                    control the revenue.
-                  </p>
-                </div>
-                <div
-                  class="bg-white rounded-2xl border border-slate-100 p-4 text-left"
-                >
-                  <div class="mb-1 text-sm font-semibold">
-                    Already using Square?
-                  </div>
-                  <p class="text-slate-600">
-                    Great. We can work with your existing Square account and
-                    build an organized, guest-friendly online ordering flow on
-                    top of what you already have.
+                  <p
+                    class="text-center text-xs text-slate-500 mt-4"
+                  >
+                    No long-term contracts. Cancel any time with 30 days'
+                    notice.
                   </p>
                 </div>
               </div>
 
-              <p
-                class="mt-6 text-[11px] text-slate-500 text-center max-w-md mx-auto"
-              >
+              <p class="text-center text-slate-500 mt-6 text-sm">
                 Multi-location and group pricing available upon request.
               </p>
+            </div>
+
+            <!-- extra pricing info -->
+            <div
+              class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mt-12 text-sm"
+            >
+              <div
+                class="text-center p-6 bg-slate-50 rounded-2xl"
+              >
+                <div
+                  class="w-12 h-12 bg-white rounded-xl flex items-center justify-center mx-auto mb-4 shadow-sm text-xl"
+                >
+                  ⚙️
+                </div>
+                <h4 class="font-semibold text-slate-900 mb-2">
+                  What about setup?
+                </h4>
+                <p class="text-slate-600">
+                  Setup fees are customized based on menu size and complexity.
+                  Most single-location restaurants fall between $0–$299.
+                </p>
+              </div>
+              <div
+                class="text-center p-6 bg-slate-50 rounded-2xl"
+              >
+                <div
+                  class="w-12 h-12 bg-white rounded-xl flex items-center justify-center mx-auto mb-4 shadow-sm text-xl"
+                >
+                  💳
+                </div>
+                <h4 class="font-semibold text-slate-900 mb-2">
+                  Who controls the money?
+                </h4>
+                <p class="text-slate-600">
+                  You do. All payments go through your Square account and
+                  deposit directly to your bank. We manage the system; you
+                  control the revenue.
+                </p>
+              </div>
+              <div
+                class="text-center p-6 bg-slate-50 rounded-2xl"
+              >
+                <div
+                  class="w-12 h-12 bg-white rounded-xl flex items-center justify-center mx-auto mb-4 shadow-sm text-xl"
+                >
+                  ⚡
+                </div>
+                <h4 class="font-semibold text-slate-900 mb-2">
+                  Already using Square?
+                </h4>
+                <p class="text-slate-600">
+                  Great. We can work with your existing Square account and
+                  build an organized, guest-friendly online ordering flow on
+                  top.
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
-        <!-- FAQ (accordion style) -->
+        <!-- FAQ -->
         <section
           id="faq"
-          class="bg-white border-b border-slate-200 py-12 sm:py-16"
+          class="py-24 lg:py-32 bg-slate-50 border-t border-slate-100"
         >
-          <div class="max-w-4xl mx-auto px-4 sm:px-6">
-            <div class="text-center mb-8">
-              <p
-                class="text-[11px] font-semibold tracking-[0.25em] text-accent-500"
+          <div class="max-w-3xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-12">
+              <span
+                class="text-sm font-semibold text-amber-600 tracking-wide uppercase"
+                >FAQ</span
               >
-                FAQ
-              </p>
-              <h2 class="mt-2 text-2xl sm:text-3xl font-semibold">
+              <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mt-4">
                 Frequently asked questions
               </h2>
             </div>
 
-            <div class="space-y-3 text-sm">
-              <!-- each FAQ item -->
-              <div class="bg-slate-50 rounded-2xl border border-slate-100">
+            <div class="space-y-4 text-sm">
+              <!-- each FAQ -->
+              <div class="bg-white rounded-xl shadow-sm border border-slate-100">
                 <button
-                  class="faq-toggle w-full flex items-center justify-between px-4 py-3"
+                  class="faq-toggle w-full flex items-center justify-between px-5 py-4"
                 >
-                  <span class="text-left text-sm">
+                  <span class="text-left font-semibold text-slate-900">
                     Do I have to change my existing website?
                   </span>
-                  <span class="text-xl leading-none text-slate-500">+</span>
+                  <span class="text-xl text-slate-500">+</span>
                 </button>
                 <div
-                  class="faq-body px-4 pb-4 text-xs text-slate-600 hidden border-t border-slate-100"
+                  class="faq-body hidden border-t border-slate-100 px-5 pb-4 text-xs text-slate-600"
                 >
                   No. We integrate online ordering into the website you already
-                  have using clean links or embedded experiences. Your web
-                  person just drops in the buttons we provide.
+                  have using links or embedded experiences. Your web person just
+                  drops in the buttons we provide.
                 </div>
               </div>
 
-              <div class="bg-slate-50 rounded-2xl border border-slate-100">
+              <div class="bg-white rounded-xl shadow-sm border border-slate-100">
                 <button
-                  class="faq-toggle w-full flex items-center justify-between px-4 py-3"
+                  class="faq-toggle w-full flex items-center justify-between px-5 py-4"
                 >
-                  <span class="text-left text-sm">
+                  <span class="text-left font-semibold text-slate-900">
                     Will my staff need to learn a whole new system?
                   </span>
-                  <span class="text-xl leading-none text-slate-500">+</span>
+                  <span class="text-xl text-slate-500">+</span>
                 </button>
                 <div
-                  class="faq-body px-4 pb-4 text-xs text-slate-600 hidden border-t border-slate-100"
+                  class="faq-body hidden border-t border-slate-100 px-5 pb-4 text-xs text-slate-600"
                 >
                   Orders show up in a simple, consistent way through Square (or
-                  your existing POS integration, if available). We design the
-                  flow around how your kitchen already works.
+                  your existing POS integration). We design the flow around how
+                  your kitchen already works.
                 </div>
               </div>
 
-              <div class="bg-slate-50 rounded-2xl border border-slate-100">
+              <div class="bg-white rounded-xl shadow-sm border border-slate-100">
                 <button
-                  class="faq-toggle w-full flex items-center justify-between px-4 py-3"
+                  class="faq-toggle w-full flex items-center justify-between px-5 py-4"
                 >
-                  <span class="text-left text-sm">Who owns the Square account?</span>
-                  <span class="text-xl leading-none text-slate-500">+</span>
+                  <span class="text-left font-semibold text-slate-900">
+                    Who owns the Square account?
+                  </span>
+                  <span class="text-xl text-slate-500">+</span>
                 </button>
                 <div
-                  class="faq-body px-4 pb-4 text-xs text-slate-600 hidden border-t border-slate-100"
+                  class="faq-body hidden border-t border-slate-100 px-5 pb-4 text-xs text-slate-600"
                 >
-                  You do. We help set it up and manage the configuration, but
-                  the account and funds belong to your business. We typically
-                  work as an admin on your existing account.
+                  You do. We help set it up and manage configuration, but the
+                  account and funds belong to your business.
                 </div>
               </div>
 
-              <div class="bg-slate-50 rounded-2xl border border-slate-100">
+              <div class="bg-white rounded-xl shadow-sm border border-slate-100">
                 <button
-                  class="faq-toggle w-full flex items-center justify-between px-4 py-3"
+                  class="faq-toggle w-full flex items-center justify-between px-5 py-4"
                 >
-                  <span class="text-left text-sm">
+                  <span class="text-left font-semibold text-slate-900">
                     How long does it take to go live?
                   </span>
-                  <span class="text-xl leading-none text-slate-500">+</span>
+                  <span class="text-xl text-slate-500">+</span>
                 </button>
                 <div
-                  class="faq-body px-4 pb-4 text-xs text-slate-600 hidden border-t border-slate-100"
+                  class="faq-body hidden border-t border-slate-100 px-5 pb-4 text-xs text-slate-600"
                 >
                   For most restaurants, we can go from discovery to live online
                   ordering in 7–10 days, depending on menu complexity and how
@@ -844,239 +1112,214 @@
                 </div>
               </div>
 
-              <div class="bg-slate-50 rounded-2xl border border-slate-100">
+              <div class="bg-white rounded-xl shadow-sm border border-slate-100">
                 <button
-                  class="faq-toggle w-full flex items-center justify-between px-4 py-3"
+                  class="faq-toggle w-full flex items-center justify-between px-5 py-4"
                 >
-                  <span class="text-left text-sm">What about setup fees?</span>
-                  <span class="text-xl leading-none text-slate-500">+</span>
+                  <span class="text-left font-semibold text-slate-900">
+                    What about setup fees?
+                  </span>
+                  <span class="text-xl text-slate-500">+</span>
                 </button>
                 <div
-                  class="faq-body px-4 pb-4 text-xs text-slate-600 hidden border-t border-slate-100"
+                  class="faq-body hidden border-t border-slate-100 px-5 pb-4 text-xs text-slate-600"
                 >
                   Setup is tailored to your concept. Most single-location
-                  restaurants fall between $0–$299. We can also roll some or all
-                  of it into your first month as a promo to get started.
+                  restaurants fall between $0–$299, and we can roll some or all
+                  into your first month if needed.
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- CONTACT -->
+        <!-- CTA SECTION -->
         <section
-          id="contact"
-          class="bg-slate-50 border-b border-slate-200 py-12 sm:py-16"
+          id="cta"
+          class="py-24 lg:py-32 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800 text-white relative overflow-hidden"
         >
           <div
-            class="max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-[1.1fr,0.9fr] gap-10 items-center"
-          >
-            <div>
-              <h2 class="text-2xl sm:text-3xl font-semibold">
-                Ready to hand off online ordering?
-              </h2>
-              <p class="mt-3 text-sm text-slate-600 max-w-xl">
-                Share a few details and we’ll follow up with a quick,
-                no-pressure conversation about your goals, your current setup,
-                and what an online ordering system could look like for you.
-              </p>
-              <ul class="mt-4 text-xs text-slate-600 space-y-1.5">
-                <li>• 20-minute Zoom or phone call</li>
-                <li>• No scripts—just real numbers and options</li>
-                <li>• We can run rough revenue projections for your concept</li>
-              </ul>
+            class="absolute inset-0 opacity-40 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')]"
+          ></div>
+          <div
+            class="absolute top-0 right-0 w-[600px] h-[600px] bg-amber-500/10 rounded-full blur-3xl"
+          ></div>
+
+          <div class="relative max-w-4xl mx-auto px-6 lg:px-8 text-center">
+            <h2 class="text-3xl lg:text-5xl font-bold mb-6">
+              Ready to turn your website into an
+              <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400"
+              >
+                ordering engine
+              </span>
+              ?
+            </h2>
+            <p class="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
+              Schedule a quick 20-minute call. We'll learn about your restaurant
+              and show you exactly how online ordering would work for you.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="mailto:hello@meridian.com?subject=Schedule%20a%20demo"
+                class="inline-flex items-center justify-center bg-white text-slate-900 hover:bg-slate-100 rounded-full px-8 h-14 text-base"
+              >
+                Schedule Your Demo
+                <span class="ml-2">📅</span>
+              </a>
+              <a
+                href="mailto:hello@meridian.com"
+                class="inline-flex items-center justify-center border border-slate-600 text-white hover:bg-slate-800 rounded-full px-8 h-14 text-base"
+              >
+                ✉️ hello@meridian.com
+              </a>
             </div>
 
-            <div class="bg-white rounded-3xl border border-slate-100 p-6 shadow-sm">
-              <div class="space-y-4 text-xs">
-                <div>
-                  <label
-                    class="block text-[11px] font-medium text-slate-800 mb-1"
-                    >Your name</label
-                  >
-                  <input
-                    type="text"
-                    placeholder="Jane Doe"
-                    class="w-full rounded-2xl border border-slate-200 bg-white px-3 py-2 text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent"
-                  />
-                </div>
-                <div>
-                  <label
-                    class="block text-[11px] font-medium text-slate-800 mb-1"
-                    >Restaurant name</label
-                  >
-                  <input
-                    type="text"
-                    placeholder="Thirsty Pagan Brewing"
-                    class="w-full rounded-2xl border border-slate-200 bg-white px-3 py-2 text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent"
-                  />
-                </div>
-                <div>
-                  <label
-                    class="block text-[11px] font-medium text-slate-800 mb-1"
-                    >Email</label
-                  >
-                  <input
-                    type="email"
-                    placeholder="you@example.com"
-                    class="w-full rounded-2xl border border-slate-200 bg-white px-3 py-2 text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent"
-                  />
-                </div>
-                <div>
-                  <label
-                    class="block text-[11px] font-medium text-slate-800 mb-1"
-                    >What are you hoping to solve?</label
-                  >
-                  <textarea
-                    rows="3"
-                    placeholder="Example: We want pickup ordering without killing the line, and a clean way to handle online pizza orders on weekends."
-                    class="w-full rounded-2xl border border-slate-200 bg-white px-3 py-2 text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent"
-                  ></textarea>
-                </div>
-                <button
-                  class="w-full inline-flex items-center justify-center rounded-full bg-slate-900 hover:bg-slate-800 text-xs font-medium py-2.5 text-white"
-                >
-                  Send (connect this to your email or form tool)
-                </button>
-                <p class="text-[11px] text-slate-500 mt-1">
-                  For now, you can replace this with a simple mailto link, or
-                  connect it to a service like Formspree, Getform, or Netlify
-                  Forms when you’re ready.
-                </p>
+            <div
+              class="flex justify-center items-center gap-8 mt-12 text-slate-400 text-sm"
+            >
+              <div class="flex items-center gap-2">
+                ⏱ <span>7–10 days to launch</span>
+              </div>
+              <div class="flex items-center gap-2">
+                ✔ <span>No long-term contracts</span>
               </div>
             </div>
           </div>
         </section>
       </main>
 
-            <!-- CTA Footer band -->
-      <section
-        class="bg-slate-900 text-slate-50 py-12 sm:py-16 border-t border-slate-800"
-      >
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h2 class="text-2xl sm:text-3xl md:text-4xl font-semibold leading-snug">
-            Ready to turn your website into an
-            <span class="text-accent-500">ordering engine?</span>
-          </h2>
-          <p
-            class="mt-4 text-sm text-slate-300 max-w-2xl mx-auto leading-relaxed"
-          >
-            Schedule a quick 20-minute call. We’ll learn about your restaurant
-            and show you exactly how online ordering would work for you.
-          </p>
-
+      <!-- FOOTER -->
+      <footer class="bg-white border-t border-slate-200 py-12">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
           <div
-            class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4"
-          >
-            <a
-              href="#contact"
-              class="inline-flex items-center justify-center px-8 py-3 rounded-full bg-white text-slate-900 text-sm font-medium shadow-md hover:bg-slate-100"
-            >
-              Schedule your demo
-              <span class="ml-2">📅</span>
-            </a>
-            <!-- optional secondary pill (blank like screenshot, or add text) -->
-            <div
-              class="h-[48px] px-8 rounded-full bg-white/5 border border-slate-700/60"
-            ></div>
-          </div>
-
-          <div
-            class="mt-6 flex flex-wrap items-center justify-center gap-6 text-[11px] text-slate-300"
+            class="flex flex-col md:flex-row justify-between items-center gap-6 text-sm"
           >
             <div class="flex items-center gap-2">
-              <span>⏱</span>
-              <span>7–10 days to launch</span>
+              <div
+                class="w-8 h-8 bg-gradient-to-br from-slate-900 to-slate-700 rounded-lg flex items-center justify-center"
+              >
+                <span class="text-white font-bold text-sm">M</span>
+              </div>
+              <span class="font-semibold text-slate-900">Meridian</span>
             </div>
-            <div class="flex items-center gap-2">
-              <span>✓</span>
-              <span>No long-term contracts</span>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <!-- Thin copyright strip -->
-      <footer
-        class="py-5 bg-white text-[11px] text-slate-500 border-t border-slate-200"
-      >
-        <div
-          class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-3"
-        >
-          <div>
-            © <span id="year"></span> OrderLine. All rights reserved.
-          </div>
-          <div class="flex gap-4 text-center sm:text-right">
-            <span
-              >Online ordering setup, management, and optimization for
-              restaurants.</span
-            >
+            <div class="flex items-center gap-6 text-slate-500">
+              <a href="#services" class="hover:text-slate-900"
+                >Services</a
+              >
+              <a href="#pricing" class="hover:text-slate-900">Pricing</a>
+              <a href="#faq" class="hover:text-slate-900">FAQ</a>
+            </div>
+
+            <p class="text-slate-400 text-center md:text-right">
+              © <span id="year"></span> Meridian. All rights reserved.
+            </p>
           </div>
         </div>
       </footer>
+    </div>
 
-
+    <!-- JS: nav scroll, mobile menu, FAQ, bar animation -->
     <script>
-    // Set footer year
-    document.getElementById("year").textContent = new Date().getFullYear();
-  
-    // FAQ accordion behavior
-    document.querySelectorAll(".faq-toggle").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const body = btn.parentElement.querySelector(".faq-body");
-        const icon = btn.querySelector("span:last-child");
-        const isOpen = !body.classList.contains("hidden");
-  
-        // Close all open FAQs
-        document.querySelectorAll(".faq-body").forEach((b) => b.classList.add("hidden"));
-        document
-          .querySelectorAll(".faq-toggle span:last-child")
-          .forEach((i) => (i.textContent = "+"));
-  
-        // Open the clicked one
-        if (!isOpen) {
-          body.classList.remove("hidden");
-          icon.textContent = "–";
+      // year
+      document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+      // nav background on scroll
+      const nav = document.getElementById("nav");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          nav.classList.add(
+            "bg-white/95",
+            "backdrop-blur-md",
+            "shadow-sm"
+          );
+        } else {
+          nav.classList.remove(
+            "bg-white/95",
+            "backdrop-blur-md",
+            "shadow-sm"
+          );
         }
       });
-    });
-  
-    // Bar chart scroll animation
-    (function () {
-      const chart = document.getElementById("analytics-chart");
-      if (!chart) return;
-  
-      const bars = Array.from(chart.querySelectorAll("[data-height]"));
-  
-      function animateBars() {
-        bars.forEach((bar, index) => {
-          const target = bar.getAttribute("data-height");
-          setTimeout(() => {
-            bar.style.height = target + "%";
-          }, index * 120); // staggers the bars rising
+
+      // mobile menu
+      const mobileToggle = document.getElementById("mobile-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const iconOpen = document.getElementById("mobile-icon-open");
+      const iconClose = document.getElementById("mobile-icon-close");
+      let mobileOpen = false;
+
+      mobileToggle.addEventListener("click", () => {
+        mobileOpen = !mobileOpen;
+        if (mobileOpen) {
+          mobileMenu.style.maxHeight = "300px";
+          iconOpen.classList.add("hidden");
+          iconClose.classList.remove("hidden");
+        } else {
+          mobileMenu.style.maxHeight = "0";
+          iconOpen.classList.remove("hidden");
+          iconClose.classList.add("hidden");
+        }
+      });
+
+      // FAQ accordion
+      document.querySelectorAll(".faq-toggle").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const body = btn.parentElement.querySelector(".faq-body");
+          const icon = btn.querySelector("span:last-child");
+          const isOpen = !body.classList.contains("hidden");
+
+          // close all
+          document
+            .querySelectorAll(".faq-body")
+            .forEach((b) => b.classList.add("hidden"));
+          document
+            .querySelectorAll(".faq-toggle span:last-child")
+            .forEach((i) => (i.textContent = "+"));
+
+          if (!isOpen) {
+            body.classList.remove("hidden");
+            icon.textContent = "–";
+          }
         });
-      }
-  
-      // Use IntersectionObserver so animation triggers on scroll
-      if ("IntersectionObserver" in window) {
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                animateBars();
-                observer.disconnect(); // run once
-              }
-            });
-          },
-          { threshold: 0.4 }
-        );
-  
-        observer.observe(chart);
-      } else {
-        // Fallback for older browsers
-        animateBars();
-      }
-    })();
-  </script>
+      });
+
+      // bar chart animation on scroll
+      (function () {
+        const chart = document.getElementById("bar-chart");
+        if (!chart) return;
+
+        const bars = Array.from(chart.querySelectorAll(".bar"));
+
+        function animateBars() {
+          bars.forEach((bar, index) => {
+            const target = bar.getAttribute("data-height");
+            setTimeout(() => {
+              bar.style.height = target + "%";
+            }, index * 120);
+          });
+        }
+
+        if ("IntersectionObserver" in window) {
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  animateBars();
+                  observer.disconnect();
+                }
+              });
+            },
+            { threshold: 0.4 }
+          );
+          observer.observe(chart);
+        } else {
+          animateBars();
+        }
+      })();
+    </script>
   </body>
 </html>
