@@ -1223,103 +1223,107 @@
 
     <!-- JS: nav scroll, mobile menu, FAQ, bar animation -->
     <script>
+    document.addEventListener("DOMContentLoaded", function () {
       // year
-      document.getElementById("year").textContent =
-        new Date().getFullYear();
-
+      var yearSpan = document.getElementById("year");
+      if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+      }
+  
       // nav background on scroll
-      const nav = document.getElementById("nav");
-      window.addEventListener("scroll", () => {
+      var nav = document.getElementById("nav");
+      window.addEventListener("scroll", function () {
+        if (!nav) return;
         if (window.scrollY > 50) {
-          nav.classList.add(
-            "bg-white/95",
-            "backdrop-blur-md",
-            "shadow-sm"
-          );
+          nav.classList.add("bg-white/95", "backdrop-blur-md", "shadow-sm");
         } else {
-          nav.classList.remove(
-            "bg-white/95",
-            "backdrop-blur-md",
-            "shadow-sm"
-          );
+          nav.classList.remove("bg-white/95", "backdrop-blur-md", "shadow-sm");
         }
       });
-
+  
       // mobile menu
-      const mobileToggle = document.getElementById("mobile-toggle");
-      const mobileMenu = document.getElementById("mobile-menu");
-      const iconOpen = document.getElementById("mobile-icon-open");
-      const iconClose = document.getElementById("mobile-icon-close");
-      let mobileOpen = false;
-
-      mobileToggle.addEventListener("click", () => {
-        mobileOpen = !mobileOpen;
-        if (mobileOpen) {
-          mobileMenu.style.maxHeight = "300px";
-          iconOpen.classList.add("hidden");
-          iconClose.classList.remove("hidden");
-        } else {
-          mobileMenu.style.maxHeight = "0";
-          iconOpen.classList.remove("hidden");
-          iconClose.classList.add("hidden");
-        }
-      });
-
+      var mobileToggle = document.getElementById("mobile-toggle");
+      var mobileMenu = document.getElementById("mobile-menu");
+      var iconOpen = document.getElementById("mobile-icon-open");
+      var iconClose = document.getElementById("mobile-icon-close");
+      var mobileOpen = false;
+  
+      if (mobileToggle && mobileMenu && iconOpen && iconClose) {
+        mobileToggle.addEventListener("click", function () {
+          mobileOpen = !mobileOpen;
+          if (mobileOpen) {
+            mobileMenu.style.maxHeight = "300px";
+            iconOpen.classList.add("hidden");
+            iconClose.classList.remove("hidden");
+          } else {
+            mobileMenu.style.maxHeight = "0";
+            iconOpen.classList.remove("hidden");
+            iconClose.classList.add("hidden");
+          }
+        });
+      }
+  
       // FAQ accordion
-      document.querySelectorAll(".faq-toggle").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          const body = btn.parentElement.querySelector(".faq-body");
-          const icon = btn.querySelector("span:last-child");
-          const isOpen = !body.classList.contains("hidden");
-
-          // close all
-          document
-            .querySelectorAll(".faq-body")
-            .forEach((b) => b.classList.add("hidden"));
-          document
-            .querySelectorAll(".faq-toggle span:last-child")
-            .forEach((i) => (i.textContent = "+"));
-
-          if (!isOpen) {
+      var faqToggles = document.querySelectorAll(".faq-toggle");
+      for (var t = 0; t < faqToggles.length; t++) {
+        faqToggles[t].addEventListener("click", function () {
+          var body = this.parentElement.querySelector(".faq-body");
+          var icon = this.querySelector("span:last-child");
+          var isOpen = body && !body.classList.contains("hidden");
+  
+          var allBodies = document.querySelectorAll(".faq-body");
+          for (var i = 0; i < allBodies.length; i++) {
+            allBodies[i].classList.add("hidden");
+          }
+          var allIcons = document.querySelectorAll(".faq-toggle span:last-child");
+          for (var j = 0; j < allIcons.length; j++) {
+            allIcons[j].textContent = "+";
+          }
+  
+          if (!isOpen && body && icon) {
             body.classList.remove("hidden");
             icon.textContent = "–";
           }
         });
-      });
-
-      // bar chart animation on scroll
-      (function () {
-        const chart = document.getElementById("bar-chart");
-        if (!chart) return;
-
-        const bars = Array.from(chart.querySelectorAll(".bar"));
-
-        function animateBars() {
-          bars.forEach((bar, index) => {
-            const target = bar.getAttribute("data-height");
-            setTimeout(() => {
+      }
+  
+      // BAR CHART ANIMATION
+      var chart = document.getElementById("bar-chart");
+      if (!chart) return;
+  
+      var bars = chart.querySelectorAll(".bar");
+  
+      function animateBars() {
+        for (var k = 0; k < bars.length; k++) {
+          (function (bar, index) {
+            var target = bar.getAttribute("data-height") || "0";
+            setTimeout(function () {
               bar.style.height = target + "%";
+              // optional: smooth animation
+              bar.style.transition = "height 0.7s ease-out";
             }, index * 120);
-          });
+          })(bars[k], k);
         }
-
-        if ("IntersectionObserver" in window) {
-          const observer = new IntersectionObserver(
-            (entries) => {
-              entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                  animateBars();
-                  observer.disconnect();
-                }
-              });
-            },
-            { threshold: 0.4 }
-          );
-          observer.observe(chart);
-        } else {
-          animateBars();
-        }
-      })();
-    </script>
+      }
+  
+      // If IntersectionObserver exists, use it; otherwise just animate once.
+      if ("IntersectionObserver" in window) {
+        var observer = new IntersectionObserver(
+          function (entries, obs) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                animateBars();
+                obs.disconnect();
+              }
+            });
+          },
+          { threshold: 0.2 }
+        );
+        observer.observe(chart);
+      } else {
+        animateBars();
+      }
+    });
+  </script>
   </body>
 </html>
