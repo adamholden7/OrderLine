@@ -576,163 +576,125 @@
         <section class="py-24 lg:py-32 bg-white">
           <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+              <!-- LEFT TEXT COLUMN -->
               <div>
-                <span
-                  class="text-sm font-semibold text-amber-600 tracking-wide uppercase"
-                  >Analytics & Insights</span
-                >
+                <span class="text-sm font-semibold text-amber-600 tracking-wide uppercase">
+                  Analytics & Insights
+                </span>
                 <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mt-4">
                   Data-driven decisions for your kitchen
                 </h2>
                 <p class="text-lg text-slate-600 mt-4 mb-8">
-                  Get monthly performance snapshots and actionable insights to
-                  grow your online revenue. Know what's selling, when it's
-                  selling, and how to increase your average ticket.
+                  Get monthly performance snapshots and actionable insights to grow your online revenue.
+                  Know what's selling, when it's selling, and how to increase your average ticket.
                 </p>
-
+        
                 <div class="space-y-4 text-sm">
-                  <div
-                    class="flex items-start gap-4 p-4 bg-slate-50 rounded-xl"
-                  >
+                  <div class="flex items-start gap-4 p-4 bg-slate-50 rounded-xl">
                     <div class="p-2 bg-amber-100 rounded-lg">📈</div>
                     <div>
-                      <h4 class="font-semibold text-slate-900">
-                        Revenue Tracking
-                      </h4>
-                      <p class="text-slate-600">
-                        See daily, weekly, and monthly trends at a glance.
-                      </p>
+                      <h4 class="font-semibold text-slate-900">Revenue Tracking</h4>
+                      <p class="text-slate-600">See daily, weekly, and monthly trends at a glance.</p>
                     </div>
                   </div>
-                  <div
-                    class="flex items-start gap-4 p-4 bg-slate-50 rounded-xl"
-                  >
+                  <div class="flex items-start gap-4 p-4 bg-slate-50 rounded-xl">
                     <div class="p-2 bg-amber-100 rounded-lg">⭐</div>
                     <div>
-                      <h4 class="font-semibold text-slate-900">
-                        Popular Items
-                      </h4>
-                      <p class="text-slate-600">
-                        Know which menu items drive the most orders.
-                      </p>
+                      <h4 class="font-semibold text-slate-900">Popular Items</h4>
+                      <p class="text-slate-600">Know which menu items drive the most orders.</p>
                     </div>
                   </div>
-                  <div
-                    class="flex items-start gap-4 p-4 bg-slate-50 rounded-xl"
-                  >
+                  <div class="flex items-start gap-4 p-4 bg-slate-50 rounded-xl">
                     <div class="p-2 bg-amber-100 rounded-lg">🕒</div>
                     <div>
                       <h4 class="font-semibold text-slate-900">Peak Hours</h4>
-                      <p class="text-slate-600">
-                        Optimize staffing with order timing insights.
-                      </p>
+                      <p class="text-slate-600">Optimize staffing with order timing insights.</p>
                     </div>
                   </div>
-                  <div
-                    class="flex items-start gap-4 p-4 bg-slate-50 rounded-xl"
-                  >
+                  <div class="flex items-start gap-4 p-4 bg-slate-50 rounded-xl">
                     <div class="p-2 bg-amber-100 rounded-lg">💡</div>
                     <div>
-                      <h4 class="font-semibold text-slate-900">
-                        Upsell Performance
-                      </h4>
-                      <p class="text-slate-600">
-                        Track which modifiers and combos convert best.
-                      </p>
+                      <h4 class="font-semibold text-slate-900">Upsell Performance</h4>
+                      <p class="text-slate-600">Track which modifiers and combos convert best.</p>
                     </div>
                   </div>
                 </div>
               </div>
-
-              <!-- bar chart card -->
+        
+              <!-- BAR CHART CARD -->
               <div class="relative">
-                <div
-                  class="absolute -inset-4 bg-gradient-to-r from-slate-100 to-amber-100/50 rounded-3xl blur-2xl"
-                ></div>
-                <div
-                  class="relative bg-white rounded-2xl shadow-xl border border-slate-200 p-6"
-                >
-                  <div
-                    class="flex items-center justify-between mb-6 text-sm text-slate-500"
-                  >
-                    <h3 class="font-semibold text-slate-900">
-                      Monthly Performance
-                    </h3>
+                <div class="absolute -inset-4 bg-gradient-to-r from-slate-100 to-amber-100/50 rounded-3xl blur-2xl"></div>
+                <div class="relative bg-white rounded-2xl shadow-xl border border-slate-200 p-6">
+                  <div class="flex items-center justify-between mb-6 text-sm text-slate-500">
+                    <h3 class="font-semibold text-slate-900">Monthly Performance</h3>
                     <span>Last 6 months</span>
                   </div>
-
-                  <div
-                    id="bar-chart"
-                    class="h-48 flex items-end justify-between gap-2 mb-4"
-                  >
-                    <!-- bars (heights via data-height, animated by JS) -->
+        
+                  <!-- CHART -->
+                  <div id="bar-chart" class="h-48 flex items-end justify-between gap-2 mb-4 border border-dashed border-amber-200">
+                    <!-- Jan -->
                     <div class="flex-1 flex flex-col justify-end gap-1">
                       <div
                         class="bar w-full rounded-t-lg bg-gradient-to-t from-amber-500 to-amber-400"
-                        style="height: 10%"
+                        style="height: 75%"
                         data-height="40"
                       ></div>
                     </div>
+                    <!-- Feb -->
                     <div class="flex-1 flex flex-col justify-end gap-1">
                       <div
                         class="bar w-full rounded-t-lg bg-gradient-to-t from-amber-500 to-amber-400"
-                        style="height: 17%"
+                        style="height: 0%"
                         data-height="52"
                       ></div>
                     </div>
+                    <!-- Mar -->
                     <div class="flex-1 flex flex-col justify-end gap-1">
                       <div
                         class="bar w-full rounded-t-lg bg-gradient-to-t from-amber-500 to-amber-400"
-                        style="height: 25%"
+                        style="height: 0%"
                         data-height="48"
                       ></div>
                     </div>
+                    <!-- Apr -->
                     <div class="flex-1 flex flex-col justify-end gap-1">
                       <div
                         class="bar w-full rounded-t-lg bg-gradient-to-t from-amber-500 to-amber-400"
-                        style="height: 50%"
+                        style="height: 0%"
                         data-height="61"
                       ></div>
                     </div>
+                    <!-- May -->
                     <div class="flex-1 flex flex-col justify-end gap-1">
                       <div
                         class="bar w-full rounded-t-lg bg-gradient-to-t from-amber-500 to-amber-400"
-                        style="height: 60%"
+                        style="height: 0%"
                         data-height="55"
                       ></div>
                     </div>
+                    <!-- Jun -->
                     <div class="flex-1 flex flex-col justify-end gap-1">
                       <div
                         class="bar w-full rounded-t-lg bg-gradient-to-t from-amber-500 to-amber-400"
-                        style="height: 58%"
+                        style="height: 0%"
                         data-height="75"
                       ></div>
                     </div>
                   </div>
-
+        
                   <div class="flex justify-between text-xs text-slate-500">
-                    <span>Jan</span>
-                    <span>Feb</span>
-                    <span>Mar</span>
-                    <span>Apr</span>
-                    <span>May</span>
-                    <span>Jun</span>
+                    <span>Jan</span><span>Feb</span><span>Mar</span>
+                    <span>Apr</span><span>May</span><span>Jun</span>
                   </div>
-
-                  <div
-                    class="mt-6 pt-6 border-t grid grid-cols-2 gap-4 text-sm"
-                  >
+        
+                  <div class="mt-6 pt-6 border-t grid grid-cols-2 gap-4 text-sm">
                     <div>
                       <p class="text-slate-500">Total Revenue</p>
-                      <p class="text-2xl font-bold text-slate-900">
-                        $142,580
-                      </p>
+                      <p class="text-2xl font-bold text-slate-900">$142,580</p>
                     </div>
                     <div>
                       <p class="text-slate-500">Growth</p>
-                      <p class="text-2xl font-bold text-emerald-600">
-                        +34%
-                      </p>
+                      <p class="text-2xl font-bold text-emerald-600">+34%</p>
                     </div>
                   </div>
                 </div>
