@@ -2,11 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>OrderLine – Online Ordering Setup & Management for Restaurants</title>
+    <title>OrderLine – Your Online Ordering Department for Restaurants</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="OrderLine helps restaurants launch and manage online ordering with Square and modern web integrations – without the tech headaches."
+      content="OrderLine is your done-for-you online ordering department. We set up, manage, and optimize Square Online ordering for independent restaurants."
     />
     <!-- Tailwind via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -19,8 +19,8 @@
             },
             colors: {
               brand: {
-                50: "#f5f8ff",
-                100: "#e4ebff",
+                50: "#eff4ff",
+                100: "#dbe8ff",
                 500: "#2563eb", // primary
                 600: "#1d4ed8",
                 700: "#1e40af",
@@ -31,35 +31,36 @@
       };
     </script>
   </head>
-  <body class="bg-slate-950 text-slate-50 font-sans">
+  <body class="bg-slate-50 text-slate-900 font-sans">
     <!-- Page wrapper -->
     <div class="min-h-screen flex flex-col">
       <!-- Nav -->
-      <header class="border-b border-slate-800/60 bg-slate-950/70 backdrop-blur">
+      <header class="border-b border-slate-200 bg-white/80 backdrop-blur">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
           <div class="flex items-center gap-2">
-            <div class="h-9 w-9 rounded-xl bg-gradient-to-tr from-brand-500 via-sky-400 to-emerald-400 flex items-center justify-center shadow-lg shadow-sky-500/30">
-              <span class="text-xs font-semibold tracking-tight">OL</span>
+            <div
+              class="h-9 w-9 rounded-xl bg-gradient-to-tr from-brand-500 via-sky-400 to-emerald-400 flex items-center justify-center shadow-md"
+            >
+              <span class="text-xs font-semibold tracking-tight text-white">OL</span>
             </div>
             <div>
               <div class="text-sm font-semibold tracking-tight">OrderLine</div>
-              <div class="text-[11px] text-slate-400 -mt-0.5">
-                Online Ordering Consulting
+              <div class="text-[11px] text-slate-500 -mt-0.5">
+                Your Online Ordering Department
               </div>
             </div>
           </div>
-          <nav class="hidden md:flex items-center gap-8 text-sm text-slate-300">
-            <a href="#services" class="hover:text-slate-50 transition">Services</a>
-            <a href="#integration" class="hover:text-slate-50 transition">Integration</a>
-            <a href="#process" class="hover:text-slate-50 transition">How It Works</a>
-            <a href="#pricing" class="hover:text-slate-50 transition">Pricing</a>
-            <a href="#faq" class="hover:text-slate-50 transition">FAQ</a>
+          <nav class="hidden md:flex items-center gap-8 text-sm text-slate-600">
+            <a href="#services" class="hover:text-slate-900 transition">Services</a>
+            <a href="#process" class="hover:text-slate-900 transition">How It Works</a>
+            <a href="#pricing" class="hover:text-slate-900 transition">Pricing</a>
+            <a href="#faq" class="hover:text-slate-900 transition">FAQ</a>
           </nav>
           <a
             href="#contact"
-            class="hidden sm:inline-flex text-xs sm:text-sm items-center gap-1.5 px-4 py-2 rounded-xl bg-brand-500 hover:bg-brand-600 transition shadow-md shadow-brand-500/40"
+            class="hidden sm:inline-flex text-xs sm:text-sm items-center gap-1.5 px-4 py-2 rounded-xl bg-brand-500 hover:bg-brand-600 text-white transition shadow-md"
           >
-            <span>Book a Free Consult</span>
+            <span>Talk about my restaurant</span>
           </a>
         </div>
       </header>
@@ -67,122 +68,126 @@
       <!-- Main content -->
       <main class="flex-1">
         <!-- Hero -->
-        <section class="border-b border-slate-800/60 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.18),_transparent),radial-gradient(circle_at_bottom,_rgba(37,99,235,0.18),_transparent)]">
-          <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-20 grid lg:grid-cols-2 gap-10 items-center">
+        <section
+          class="border-b border-slate-200 bg-[radial-gradient(circle_at_top,_rgba(37,99,235,0.14),_transparent),radial-gradient(circle_at_bottom,_rgba(45,212,191,0.16),_transparent)]"
+        >
+          <div
+            class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-20 grid lg:grid-cols-2 gap-10 items-center"
+          >
             <div class="space-y-6">
               <span
-                class="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/5 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.18em] text-emerald-200"
+                class="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.18em] text-emerald-700"
               >
-                <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                Online ordering, done for you
+                <span class="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                Done-for-you online ordering
               </span>
               <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight">
-                Turn your restaurant’s website into
-                <span class="text-sky-400">a full online ordering system.</span>
+                Your restaurant’s
+                <span class="text-brand-600">online ordering department.</span>
               </h1>
-              <p class="text-sm sm:text-base text-slate-300 max-w-xl">
-                OrderLine helps independent restaurants launch and manage
-                online ordering using platforms like Square – without changing
-                your website, staff, or POS. We handle setup, menu builds,
-                integration, and ongoing management so you can focus on food.
+              <p class="text-sm sm:text-base text-slate-700 max-w-xl">
+                OrderLine sets up, runs, and improves your Square Online ordering so you
+                don’t have to. We configure the tech, build and maintain your menu, and
+                plug “Order Online” into the website you already have.
               </p>
               <div class="flex flex-wrap items-center gap-4">
                 <a
                   href="#contact"
-                  class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-500 hover:bg-brand-600 text-sm font-medium shadow-lg shadow-brand-500/40"
+                  class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-500 hover:bg-brand-600 text-sm font-medium text-white shadow-lg"
                 >
-                  Schedule a 20-Minute Demo
+                  Schedule a 20-minute call
                   <span aria-hidden="true">↗</span>
                 </a>
                 <button
                   onclick="document.getElementById('pricing').scrollIntoView({ behavior: 'smooth' })"
-                  class="inline-flex items-center gap-1.5 text-sm text-slate-300 hover:text-slate-50"
+                  class="inline-flex items-center gap-1.5 text-sm text-slate-700 hover:text-slate-900"
                 >
                   View pricing
                   <span aria-hidden="true">→</span>
                 </button>
               </div>
-              <div class="text-xs text-slate-400 space-y-1">
-                <div>• No long-term contracts • Keep your existing website • Bank deposits directly to you</div>
-                <div>• Ideal for pickup & takeout: bars, pizza, BBQ, brewpubs, diners, and more</div>
+              <div class="text-xs text-slate-600 space-y-1">
+                <div>• Keep your existing website and brand</div>
+                <div>• Ideal for pickup & takeout: pizza · bars · BBQ · brewpubs · diners</div>
+                <div>• You control the Square account and deposits</div>
               </div>
             </div>
 
             <!-- Hero panel / “UI” preview -->
             <div
-              class="relative mt-4 lg:mt-0 rounded-3xl border border-slate-800 bg-slate-900/70 p-4 sm:p-5 shadow-2xl shadow-sky-900/50"
+              class="relative mt-4 lg:mt-0 rounded-3xl border border-slate-200 bg-white p-4 sm:p-5 shadow-xl"
             >
               <div class="flex items-center justify-between mb-3">
                 <div>
-                  <div class="text-xs font-medium text-slate-200">
-                    Online ordering snapshot
+                  <div class="text-xs font-medium text-slate-900">
+                    Live online ordering snapshot
                   </div>
-                  <div class="text-[11px] text-slate-400">
-                    Example of what we manage for you
+                  <div class="text-[11px] text-slate-500">
+                    A simple view of what we manage for you
                   </div>
                 </div>
                 <span
-                  class="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 px-2 py-1 text-[10px] text-emerald-300"
+                  class="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-1 text-[10px] text-emerald-700"
                 >
-                  <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
-                  Live orders
+                  <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+                  Orders flowing
                 </span>
               </div>
               <div class="space-y-3">
                 <!-- Fake order cards -->
                 <div class="grid gap-3 sm:grid-cols-2">
-                  <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-3">
+                  <div class="rounded-2xl border border-slate-200 bg-slate-50 p-3">
                     <div class="flex justify-between text-xs mb-1.5">
-                      <span class="font-medium text-slate-100">Thirsty Pagan</span>
-                      <span class="text-emerald-300 font-medium">+$42.50</span>
+                      <span class="font-medium text-slate-900">Thirsty Pagan</span>
+                      <span class="text-emerald-600 font-medium">+$42.50</span>
                     </div>
-                    <div class="text-[11px] text-slate-400">
-                      Large pizza • Garlic knots • 2 sodas
+                    <div class="text-[11px] text-slate-600">
+                      Large pizza · garlic knots · 2 sodas
                     </div>
                     <div class="mt-2 flex justify-between items-center text-[11px]">
-                      <span class="px-2 py-0.5 rounded-full bg-slate-800 text-slate-200">
+                      <span class="px-2 py-0.5 rounded-full bg-white border border-slate-200">
                         Pickup · 6:45 PM
                       </span>
-                      <span class="text-slate-400">Square Online</span>
+                      <span class="text-slate-500">Square Online</span>
                     </div>
                   </div>
-                  <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-3">
+                  <div class="rounded-2xl border border-slate-200 bg-slate-50 p-3">
                     <div class="flex justify-between text-xs mb-1.5">
-                      <span class="font-medium text-slate-100">Gronk’s</span>
-                      <span class="text-emerald-300 font-medium">+$31.20</span>
+                      <span class="font-medium text-slate-900">Gronk’s</span>
+                      <span class="text-emerald-600 font-medium">+$31.20</span>
                     </div>
-                    <div class="text-[11px] text-slate-400">
-                      2 burgers • Fries • Cheese curds
+                    <div class="text-[11px] text-slate-600">
+                      2 burgers · fries · cheese curds
                     </div>
                     <div class="mt-2 flex justify-between items-center text-[11px]">
-                      <span class="px-2 py-0.5 rounded-full bg-slate-800 text-slate-200">
+                      <span class="px-2 py-0.5 rounded-full bg-white border border-slate-200">
                         Pickup · 7:10 PM
                       </span>
-                      <span class="text-slate-400">Square Online</span>
+                      <span class="text-slate-500">Square Online</span>
                     </div>
                   </div>
                 </div>
 
                 <!-- Metrics row -->
                 <div class="grid sm:grid-cols-3 gap-3 text-xs">
-                  <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-3">
-                    <div class="text-[11px] text-slate-400">Monthly online revenue</div>
-                    <div class="text-base font-semibold text-slate-50">$27,840</div>
-                    <div class="text-[11px] text-emerald-300 mt-1">
+                  <div class="rounded-2xl border border-slate-200 bg-slate-50 p-3">
+                    <div class="text-[11px] text-slate-500">Monthly online revenue</div>
+                    <div class="text-base font-semibold text-slate-900">$27,840</div>
+                    <div class="text-[11px] text-emerald-700 mt-1">
                       +23% vs. last month
                     </div>
                   </div>
-                  <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-3">
-                    <div class="text-[11px] text-slate-400">Avg. ticket size</div>
-                    <div class="text-base font-semibold text-slate-50">$34.60</div>
-                    <div class="text-[11px] text-slate-400 mt-1">
-                      Upsell modifiers & bundles
+                  <div class="rounded-2xl border border-slate-200 bg-slate-50 p-3">
+                    <div class="text-[11px] text-slate-500">Average ticket size</div>
+                    <div class="text-base font-semibold text-slate-900">$34.60</div>
+                    <div class="text-[11px] text-slate-600 mt-1">
+                      Upsells & smart bundles
                     </div>
                   </div>
-                  <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-3">
-                    <div class="text-[11px] text-slate-400">Time to launch</div>
-                    <div class="text-base font-semibold text-slate-50">7–10 days</div>
-                    <div class="text-[11px] text-slate-400 mt-1">
+                  <div class="rounded-2xl border border-slate-200 bg-slate-50 p-3">
+                    <div class="text-[11px] text-slate-500">Time to launch</div>
+                    <div class="text-base font-semibold text-slate-900">7–10 days</div>
+                    <div class="text-[11px] text-slate-600 mt-1">
                       From “no online ordering” to live
                     </div>
                   </div>
@@ -192,145 +197,79 @@
           </div>
         </section>
 
-        <!-- Services -->
-        <section id="services" class="border-b border-slate-800/60">
+        <!-- Services / 3 pillars -->
+        <section id="services" class="border-b border-slate-200 bg-white">
           <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16 space-y-8">
             <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
               <div>
                 <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight">
-                  What OrderLine does for your restaurant
+                  Three pillars of your online ordering department
                 </h2>
-                <p class="mt-2 text-sm text-slate-300 max-w-2xl">
-                  We specialize in **online order integration, setup, and ongoing
-                  management** for independent restaurants. No complex software,
-                  no new staff workflow – just more orders from the website you
-                  already have.
+                <p class="mt-2 text-sm text-slate-600 max-w-2xl">
+                  We’re not “a guy using Square.” We run online ordering for you — from
+                  first setup through ongoing tweaks and performance.
                 </p>
               </div>
-              <span class="text-[11px] uppercase tracking-[0.2em] text-slate-400">
-                Strategy · Setup · Management
+              <span class="text-[11px] uppercase tracking-[0.2em] text-slate-500">
+                Setup · Management · Optimization
               </span>
             </div>
 
             <div class="grid md:grid-cols-3 gap-5">
-              <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-5 space-y-3">
-                <div class="text-xs font-semibold text-sky-300">01 · Online Ordering Setup</div>
-                <h3 class="text-sm font-semibold text-slate-50">Square Online configuration</h3>
-                <p class="text-xs text-slate-300 leading-relaxed">
-                  We build your full online ordering experience using Square
-                  Online (or a similar platform): menu items, modifiers, combos,
-                  taxes, pickup windows, and kitchen routing – all tuned to your
-                  real-world operations.
+              <!-- Pillar 1: Setup -->
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5 space-y-3">
+                <div class="text-xs font-semibold text-brand-600">01 · Initial Setup</div>
+                <h3 class="text-sm font-semibold text-slate-900">
+                  From zero to live in 7–10 days
+                </h3>
+                <p class="text-xs text-slate-700 leading-relaxed">
+                  We handle all the moving pieces so you go from “no online ordering”
+                  to a clean, working system.
                 </p>
-                <ul class="text-xs text-slate-300 space-y-1.5">
-                  <li>• Digital menu & categories based on your current menu</li>
-                  <li>• Modifiers for toppings, sides, cooking preferences</li>
-                  <li>• Pickup/dine-in/takeout rules aligned with your flow</li>
-                  <li>• Hours, blackout dates, and order lead times</li>
+                <ul class="text-xs text-slate-700 space-y-1.5">
+                  <li>• Configure Square Online & connect deposits to your bank</li>
+                  <li>• Build your digital menu: items, categories, modifiers, combos</li>
+                  <li>• Set taxes, tips, order types, hours, and lead times</li>
+                  <li>• Add “Order Online” into the website you already have</li>
+                  <li>• Test the full guest flow on desktop and mobile</li>
                 </ul>
               </div>
 
-              <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-5 space-y-3">
-                <div class="text-xs font-semibold text-sky-300">02 · Website Integration</div>
-                <h3 class="text-sm font-semibold text-slate-50">
-                  Seamless “Order Online” experience
+              <!-- Pillar 2: Management -->
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5 space-y-3">
+                <div class="text-xs font-semibold text-brand-600">02 · Ongoing Management</div>
+                <h3 class="text-sm font-semibold text-slate-900">
+                  You text changes, we handle the rest
                 </h3>
-                <p class="text-xs text-slate-300 leading-relaxed">
-                  We integrate online ordering into your existing website using
-                  secure links or embedded ordering experiences, so guests never
-                  feel like they’re being bounced around the internet.
+                <p class="text-xs text-slate-700 leading-relaxed">
+                  Keep your menu fresh without logging into yet another system.
                 </p>
-                <ul class="text-xs text-slate-300 space-y-1.5">
-                  <li>• “Order Online” buttons added to key pages</li>
-                  <li>• Clean, mobile-first ordering flow for guests</li>
-                  <li>• Optional branded domain or subdomain</li>
-                  <li>• Configured for SEO, speed, and clarity</li>
+                <ul class="text-xs text-slate-700 space-y-1.5">
+                  <li>• Price changes, new items, and LTOs</li>
+                  <li>• 86’d items and temporary unavailability</li>
+                  <li>• Seasonal menus and holiday / event hours</li>
+                  <li>• Monitoring order flow on busy nights</li>
+                  <li>• Simple monthly performance summary</li>
                 </ul>
               </div>
 
-              <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-5 space-y-3">
-                <div class="text-xs font-semibold text-sky-300">03 · Ongoing Management</div>
-                <h3 class="text-sm font-semibold text-slate-50">
-                  Menu updates & performance monitoring
+              <!-- Pillar 3: Optimization -->
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5 space-y-3">
+                <div class="text-xs font-semibold text-brand-600">
+                  03 · Optimization & Analytics
+                </div>
+                <h3 class="text-sm font-semibold text-slate-900">
+                  Turn online orders into a growth channel
                 </h3>
-                <p class="text-xs text-slate-300 leading-relaxed">
-                  Online ordering is not “set and forget.” We maintain and
-                  optimize your experience so customers keep ordering and your
-                  kitchen stays sane.
+                <p class="text-xs text-slate-700 leading-relaxed">
+                  Optional, higher-touch support to grow revenue, not just maintain it.
                 </p>
-                <ul class="text-xs text-slate-300 space-y-1.5">
-                  <li>• Price changes, new items, LTOs, 86’d items</li>
-                  <li>• Seasonal and holiday hours adjustments</li>
-                  <li>• Monthly performance snapshots & insights</li>
-                  <li>• Recommendations to increase average ticket</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Integration & Setup -->
-        <section id="integration" class="border-b border-slate-800/60 bg-slate-950">
-          <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16 space-y-8">
-            <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
-              <div>
-                <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight">
-                  Detailed online order integration & setup
-                </h2>
-                <p class="mt-2 text-sm text-slate-300 max-w-3xl">
-                  OrderLine acts as your **online ordering department**. We set
-                  up the technical foundation in Square, connect it to your
-                  bank, and integrate it with your website, while keeping your
-                  existing web team, POS, and operations intact.
-                </p>
-              </div>
-            </div>
-
-            <div class="grid lg:grid-cols-2 gap-6 text-xs text-slate-200">
-              <div class="space-y-4 rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
-                <h3 class="text-sm font-semibold text-slate-50">
-                  Platform & account configuration
-                </h3>
-                <ul class="space-y-2 text-slate-300">
-                  <li>• Create or configure your Square Online account</li>
-                  <li>• Connect deposits directly to your bank account</li>
-                  <li>• Set user access so staff can view orders without breaking anything</li>
-                  <li>• Configure taxes, service charges, and tipping options</li>
-                  <li>• Align pickup windows and lead times with kitchen capacity</li>
-                </ul>
-
-                <h3 class="pt-3 text-sm font-semibold text-slate-50">
-                  Menu architecture & UX
-                </h3>
-                <ul class="space-y-2 text-slate-300">
-                  <li>• Organize your menu into logical, easy-to-scan categories</li>
-                  <li>• Build modifiers for toppings, sides, doneness, sauces, etc.</li>
-                  <li>• Create smart bundles & upsells (e.g., “Make it a combo”)</li>
-                  <li>• Add photos, descriptions, and tags for clarity and cravings</li>
-                  <li>• Set item availability (time-of-day, day-of-week, or limited runs)</li>
-                </ul>
-              </div>
-
-              <div class="space-y-4 rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
-                <h3 class="text-sm font-semibold text-slate-50">
-                  Website & workflow integration
-                </h3>
-                <ul class="space-y-2 text-slate-300">
-                  <li>• Add “Order Online” CTAs to your homepage, menu, and navigation</li>
-                  <li>• Configure clean, trackable links or embedded experiences</li>
-                  <li>• Ensure everything is mobile-optimized for guests on the go</li>
-                  <li>• Coordinate with your existing web provider if needed</li>
-                  <li>• Test full end-to-end flows before going live</li>
-                </ul>
-
-                <h3 class="pt-3 text-sm font-semibold text-slate-50">
-                  Ongoing management & support
-                </h3>
-                <ul class="space-y-2 text-slate-300">
-                  <li>• Update pricing, items, and availability as your menu evolves</li>
-                  <li>• Adjust hours for holidays, events, or staffing changes</li>
-                  <li>• Monitor performance and share simple, actionable insights</li>
-                  <li>• Provide direct point-of-contact support for owners/managers</li>
+                <ul class="text-xs text-slate-700 space-y-1.5">
+                  <li>• Monthly or quarterly review calls</li>
+                  <li>• Ideas to increase average ticket size and repeat orders</li>
+                  <li>• Tweaks to categories, upsells, and promos</li>
+                  <li>• Compare online vs. in-store trends</li>
+                  <li>• Can be bundled into a future “Pro” tier</li>
                 </ul>
               </div>
             </div>
@@ -338,151 +277,156 @@
         </section>
 
         <!-- Process -->
-        <section id="process" class="border-b border-slate-800/60">
+        <section id="process" class="border-b border-slate-200 bg-slate-50">
           <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16 space-y-8">
             <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
               <div>
                 <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight">
                   How it works
                 </h2>
-                <p class="mt-2 text-sm text-slate-300 max-w-2xl">
-                  From discovery to launch, we guide you through a simple,
-                  structured process – usually going from “no online ordering”
-                  to live orders in about a week.
+                <p class="mt-2 text-sm text-slate-600 max-w-2xl">
+                  A simple, four-step process. Most restaurants go from “we should really
+                  do online ordering” to live orders in about a week.
                 </p>
               </div>
             </div>
 
-            <ol class="grid md:grid-cols-4 gap-5 text-xs text-slate-200">
-              <li class="flex flex-col gap-2 rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
-                <span class="text-[11px] font-semibold text-sky-300">Step 1</span>
+            <ol class="grid md:grid-cols-4 gap-5 text-xs text-slate-800">
+              <li class="flex flex-col gap-2 rounded-2xl border border-slate-200 bg-white p-4">
+                <span class="text-[11px] font-semibold text-brand-600">Step 1</span>
                 <h3 class="text-sm font-semibold">Quick discovery call</h3>
-                <p class="text-slate-300">
-                  We learn about your menu, volume, hours, and kitchen flow so
-                  we design an ordering system that works with your reality.
+                <p class="text-slate-600">
+                  We learn your menu, volume, hours, and kitchen flow so we design an
+                  ordering system that fits your reality.
                 </p>
               </li>
-              <li class="flex flex-col gap-2 rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
-                <span class="text-[11px] font-semibold text-sky-300">Step 2</span>
+              <li class="flex flex-col gap-2 rounded-2xl border border-slate-200 bg-white p-4">
+                <span class="text-[11px] font-semibold text-brand-600">Step 2</span>
                 <h3 class="text-sm font-semibold">Square & menu build</h3>
-                <p class="text-slate-300">
-                  We configure Square Online, connect your bank, build your
-                  digital menu, and set all the rules behind the scenes.
+                <p class="text-slate-600">
+                  We configure Square Online, connect your bank, and build your digital
+                  menu with all the rules behind the scenes.
                 </p>
               </li>
-              <li class="flex flex-col gap-2 rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
-                <span class="text-[11px] font-semibold text-sky-300">Step 3</span>
+              <li class="flex flex-col gap-2 rounded-2xl border border-slate-200 bg-white p-4">
+                <span class="text-[11px] font-semibold text-brand-600">Step 3</span>
                 <h3 class="text-sm font-semibold">Website integration</h3>
-                <p class="text-slate-300">
-                  We add “Order Online” entry points to your website and test
-                  the full experience on mobile and desktop.
+                <p class="text-slate-600">
+                  We add clear “Order Online” entry points to your current website and
+                  test the experience on mobile and desktop.
                 </p>
               </li>
-              <li class="flex flex-col gap-2 rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
-                <span class="text-[11px] font-semibold text-sky-300">Step 4</span>
+              <li class="flex flex-col gap-2 rounded-2xl border border-slate-200 bg-white p-4">
+                <span class="text-[11px] font-semibold text-brand-600">Step 4</span>
                 <h3 class="text-sm font-semibold">Launch & manage</h3>
-                <p class="text-slate-300">
-                  We go live, monitor the first week closely, and provide
-                  ongoing support, menu updates, and performance insights.
+                <p class="text-slate-600">
+                  We go live, watch the first week closely, and then handle updates and
+                  performance with you each month.
                 </p>
               </li>
             </ol>
           </div>
         </section>
 
-        <!-- Pricing -->
-        <section id="pricing" class="border-b border-slate-800/60 bg-slate-950">
+        <!-- Pricing / Revenue model -->
+        <section id="pricing" class="border-b border-slate-200 bg-white">
           <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16 space-y-8">
             <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
               <div>
                 <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight">
                   Simple, aligned pricing
                 </h2>
-                <p class="mt-2 text-sm text-slate-300 max-w-2xl">
-                  Our pricing is designed so we only win when you do. You get a
-                  predictable base fee plus a small percentage of online sales
-                  to align incentives.
+                <p class="mt-2 text-sm text-slate-600 max-w-2xl">
+                  You get recurring support and we share upside when online ordering
+                  performs. No long-term contracts.
                 </p>
               </div>
             </div>
 
             <div class="grid lg:grid-cols-[1.2fr,0.9fr] gap-6">
-              <div class="rounded-2xl border border-brand-500 bg-slate-900/80 p-5 sm:p-6 shadow-lg shadow-brand-500/30">
+              <div
+                class="rounded-2xl border border-brand-200 bg-brand-50/60 p-5 sm:p-6 shadow-md shadow-brand-100"
+              >
                 <div class="flex justify-between items-start gap-3 mb-3">
                   <div>
-                    <h3 class="text-lg font-semibold text-slate-50">
+                    <h3 class="text-lg font-semibold text-slate-900">
                       Managed Online Ordering
                     </h3>
-                    <p class="text-xs text-slate-300 mt-1">
-                      Ideal for independent restaurants, bars, and pizzerias.
+                    <p class="text-xs text-slate-600 mt-1">
+                      For independent restaurants, bars, and pizzerias that want a partner,
+                      not another tool.
                     </p>
                   </div>
-                  <span class="rounded-full bg-emerald-500/10 text-[11px] text-emerald-300 px-3 py-1">
-                    Recommended
+                  <span
+                    class="rounded-full bg-emerald-100 text-[11px] text-emerald-800 px-3 py-1"
+                  >
+                    Most popular
                   </span>
                 </div>
                 <div class="flex flex-wrap items-baseline gap-3 mb-4">
                   <div class="flex items-baseline gap-1">
                     <span class="text-2xl font-semibold">$250</span>
-                    <span class="text-xs text-slate-400">/month</span>
+                    <span class="text-xs text-slate-500">/month</span>
                   </div>
-                  <div class="h-4 w-px bg-slate-700"></div>
-                  <div class="flex items-baseline gap-1 text-slate-200">
+                  <div class="h-4 w-px bg-slate-300"></div>
+                  <div class="flex items-baseline gap-1 text-slate-800">
                     <span class="text-base font-semibold">+ 5%</span>
-                    <span class="text-xs text-slate-400">of online sales</span>
+                    <span class="text-xs text-slate-500">of online sales</span>
                   </div>
                 </div>
-                <p class="text-xs text-slate-300 mb-4">
+                <p class="text-xs text-slate-600 mb-4">
                   No long-term contracts. Cancel any time with 30 days’ notice.
                 </p>
-                <ul class="text-xs text-slate-200 space-y-2 mb-5">
+                <ul class="text-xs text-slate-800 space-y-2 mb-5">
                   <li>• Full Square Online configuration and bank connection</li>
                   <li>• Digital menu build with categories, modifiers, and photos</li>
-                  <li>• Website integration and testing</li>
+                  <li>• Website “Order Online” integration and testing</li>
                   <li>• Ongoing menu & price updates (within reasonable scope)</li>
-                  <li>• Monthly performance summary and recommendations</li>
+                  <li>• Monthly performance summary and suggestions</li>
                   <li>• Priority support for owners and managers</li>
                 </ul>
                 <a
                   href="#contact"
-                  class="inline-flex items-center justify-center w-full rounded-xl bg-brand-500 hover:bg-brand-600 text-sm font-medium py-2.5 mt-1"
+                  class="inline-flex items-center justify-center w-full rounded-xl bg-brand-500 hover:bg-brand-600 text-sm font-medium py-2.5 text-white"
                 >
                   Talk about my restaurant
                 </a>
-                <p class="text-[11px] text-slate-400 mt-3">
-                  Multi-location and group pricing available upon request.
+                <p class="text-[11px] text-slate-600 mt-3">
+                  Example: At $15,000/month in online orders, 5% = $750. With a $250
+                  management fee, that’s $1,000/month — and no staff time spent managing
+                  the system.
                 </p>
               </div>
 
-              <div class="space-y-4 text-xs text-slate-200">
-                <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
-                  <h3 class="text-sm font-semibold text-slate-50 mb-1.5">
-                    What about setup?
+              <div class="space-y-4 text-xs text-slate-800">
+                <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                  <h3 class="text-sm font-semibold text-slate-900 mb-1.5">
+                    Setup fee
                   </h3>
-                  <p class="text-slate-300">
-                    Setup fees are customized based on menu size and complexity.
-                    For most single-location restaurants, setup ranges from
-                    **$0–$299** and can often be rolled into the first month.
+                  <p class="text-slate-600">
+                    Setup is based on menu size and complexity. For most single-location
+                    restaurants, setup ranges from <strong>$0–$299</strong> and can often
+                    be rolled into the first month as a promo to get started quickly.
                   </p>
                 </div>
-                <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
-                  <h3 class="text-sm font-semibold text-slate-50 mb-1.5">
+                <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                  <h3 class="text-sm font-semibold text-slate-900 mb-1.5">
                     Who controls the money?
                   </h3>
-                  <p class="text-slate-300">
-                    You do. All customer payments are processed through your
-                    Square account and deposited directly into your bank. We
-                    manage the system; you control the revenue.
+                  <p class="text-slate-600">
+                    You do. All payments go through your Square account and deposit
+                    straight into your bank. We manage configuration and strategy; you own
+                    the revenue.
                   </p>
                 </div>
-                <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
-                  <h3 class="text-sm font-semibold text-slate-50 mb-1.5">
+                <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                  <h3 class="text-sm font-semibold text-slate-900 mb-1.5">
                     Already using Square?
                   </h3>
-                  <p class="text-slate-300">
-                    Great. We can work with your existing Square account and
-                    build an organized, guest-friendly online ordering flow on
-                    top of what you already have.
+                  <p class="text-slate-600">
+                    Perfect. We can clean up what you have and turn it into an organized,
+                    guest-friendly online ordering flow — without changing your POS or
+                    website provider.
                   </p>
                 </div>
               </div>
@@ -491,59 +435,56 @@
         </section>
 
         <!-- FAQ -->
-        <section id="faq" class="border-b border-slate-800/60">
+        <section id="faq" class="border-b border-slate-200 bg-slate-50">
           <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16 space-y-8">
             <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
               <div>
                 <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight">
                   Frequently asked questions
                 </h2>
-                <p class="mt-2 text-sm text-slate-300 max-w-2xl">
-                  A few of the questions we hear from restaurant owners and
-                  managers when they consider adding online ordering.
+                <p class="mt-2 text-sm text-slate-600 max-w-2xl">
+                  Short answers to what owners and managers usually ask before they start.
                 </p>
               </div>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-5 text-xs text-slate-200">
-              <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+            <div class="grid md:grid-cols-2 gap-5 text-xs text-slate-800">
+              <div class="rounded-2xl border border-slate-200 bg-white p-4">
                 <h3 class="text-sm font-semibold mb-1.5">
                   Do I have to change my existing website?
                 </h3>
-                <p class="text-slate-300">
-                  No. We integrate online ordering into the website you already
-                  have using links and/or embedded experiences. Your web person
-                  only needs to add a button or link that we provide.
+                <p class="text-slate-600">
+                  No. We integrate into the site you already have with clean “Order
+                  Online” buttons or links. Your web person just adds what we provide.
                 </p>
               </div>
-              <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+              <div class="rounded-2xl border border-slate-200 bg-white p-4">
                 <h3 class="text-sm font-semibold mb-1.5">
                   Will my staff need to learn a whole new system?
                 </h3>
-                <p class="text-slate-300">
-                  Staff see orders in a simple, consistent way through Square
-                  (or your existing POS integration, if available). We design
-                  the flow so it fits how your kitchen already works.
+                <p class="text-slate-600">
+                  Orders show up in a simple, consistent way through Square (or your POS
+                  integration, if available). We design the flow around how your kitchen
+                  already works.
                 </p>
               </div>
-              <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+              <div class="rounded-2xl border border-slate-200 bg-white p-4">
                 <h3 class="text-sm font-semibold mb-1.5">
                   Who owns the Square account?
                 </h3>
-                <p class="text-slate-300">
-                  You do. We help set it up and manage the configuration, but
-                  the account and funds belong to your business. We can also
-                  work as an admin on an existing account.
+                <p class="text-slate-600">
+                  You own the account and funds. We help set things up and manage the
+                  configuration, typically as an admin on your existing Square account.
                 </p>
               </div>
-              <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+              <div class="rounded-2xl border border-slate-200 bg-white p-4">
                 <h3 class="text-sm font-semibold mb-1.5">
                   How long does it take to go live?
                 </h3>
-                <p class="text-slate-300">
-                  For most restaurants, we can go from discovery to live
-                  ordering in **7–10 days**, depending on menu complexity and
-                  speed of approvals.
+                <p class="text-slate-600">
+                  Most restaurants go from discovery to live ordering in
+                  <strong>7–10 days</strong>, depending on menu complexity and how quickly
+                  we get approvals and assets.
                 </p>
               </div>
             </div>
@@ -551,77 +492,77 @@
         </section>
 
         <!-- Contact -->
-        <section id="contact" class="border-b border-slate-800/60 bg-slate-950">
+        <section id="contact" class="border-b border-slate-200 bg-white">
           <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
             <div class="grid lg:grid-cols-[1.1fr,0.9fr] gap-8 items-center">
               <div class="space-y-4">
                 <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight">
-                  Ready to see what online ordering could do for your restaurant?
+                  Ready to hand off online ordering?
                 </h2>
-                <p class="text-sm text-slate-300 max-w-xl">
-                  Share a few details and we’ll follow up with a quick, no-pressure
-                  conversation about your goals, your current setup, and what an
-                  online ordering system could look like for you.
+                <p class="text-sm text-slate-600 max-w-xl">
+                  Share a few details and we’ll set up a quick, no-pressure call about
+                  your goals, your current setup, and what online ordering could do for
+                  your restaurant.
                 </p>
-                <ul class="text-xs text-slate-300 space-y-1.5 mt-2">
+                <ul class="text-xs text-slate-600 space-y-1.5 mt-2">
                   <li>• 20-minute Zoom or phone call</li>
-                  <li>• No sales scripts, just real numbers and options</li>
-                  <li>• We can run rough revenue projections for your concept</li>
+                  <li>• No scripts — just real numbers and options</li>
+                  <li>• We can sketch rough revenue projections for your concept</li>
                 </ul>
               </div>
 
               <!-- Simple contact “form” placeholder -->
-              <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5 sm:p-6">
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5 sm:p-6">
                 <div class="space-y-4 text-xs">
                   <div>
-                    <label class="block text-[11px] font-medium text-slate-200 mb-1">
+                    <label class="block text-[11px] font-medium text-slate-800 mb-1">
                       Your name
                     </label>
                     <input
                       type="text"
                       placeholder="Jane Doe"
-                      class="w-full rounded-xl border border-slate-700 bg-slate-900 px-3 py-2 text-xs text-slate-50 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent"
+                      class="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent"
                     />
                   </div>
                   <div>
-                    <label class="block text-[11px] font-medium text-slate-200 mb-1">
+                    <label class="block text-[11px] font-medium text-slate-800 mb-1">
                       Restaurant name
                     </label>
                     <input
                       type="text"
                       placeholder="Thirsty Pagan Brewing"
-                      class="w-full rounded-xl border border-slate-700 bg-slate-900 px-3 py-2 text-xs text-slate-50 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent"
+                      class="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent"
                     />
                   </div>
                   <div>
-                    <label class="block text-[11px] font-medium text-slate-200 mb-1">
+                    <label class="block text-[11px] font-medium text-slate-800 mb-1">
                       Email
                     </label>
                     <input
                       type="email"
                       placeholder="you@example.com"
-                      class="w-full rounded-xl border border-slate-700 bg-slate-900 px-3 py-2 text-xs text-slate-50 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent"
+                      class="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent"
                     />
                   </div>
                   <div>
-                    <label class="block text-[11px] font-medium text-slate-200 mb-1">
+                    <label class="block text-[11px] font-medium text-slate-800 mb-1">
                       What are you hoping to solve?
                     </label>
                     <textarea
                       rows="3"
                       placeholder="Example: We want pickup ordering without killing the line, and a clean way to handle online pizza orders on weekends."
-                      class="w-full rounded-xl border border-slate-700 bg-slate-900 px-3 py-2 text-xs text-slate-50 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent"
+                      class="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent"
                     ></textarea>
                   </div>
                   <button
-                    class="w-full inline-flex items-center justify-center rounded-xl bg-brand-500 hover:bg-brand-600 text-xs font-medium py-2.5"
+                    class="w-full inline-flex items-center justify-center rounded-xl bg-brand-500 hover:bg-brand-600 text-xs font-medium py-2.5 text-white"
                   >
                     Send (connect this to your email or form tool)
                   </button>
-                  <p class="text-[11px] text-slate-400 mt-1">
-                    For now, you can replace this with a simple mailto link, or
-                    connect it to a service like Formspree, Getform, or Netlify
-                    Forms when you’re ready.
+                  <p class="text-[11px] text-slate-500 mt-1">
+                    For now, you can replace this with a simple mailto link, or connect
+                    it to a service like Formspree, Getform, or Netlify Forms when
+                    you’re ready.
                   </p>
                 </div>
               </div>
@@ -631,11 +572,15 @@
       </main>
 
       <!-- Footer -->
-      <footer class="py-6 text-center text-[11px] text-slate-500">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <div>© <span id="year"></span> OrderLine. All rights reserved.</div>
+      <footer class="py-6 text-center text-[11px] text-slate-500 bg-slate-50">
+        <div
+          class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-3"
+        >
+          <div>
+            © <span id="year"></span> OrderLine. All rights reserved.
+          </div>
           <div class="flex gap-4">
-            <span>Online ordering setup & management for restaurants.</span>
+            <span>Online ordering setup, management, and optimization for restaurants.</span>
           </div>
         </div>
       </footer>
